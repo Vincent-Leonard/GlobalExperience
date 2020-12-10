@@ -1,4 +1,4 @@
-package com.example.globalexperience.Fragments;
+package com.example.globalexperience;
 
 import androidx.appcompat.app.AppCompatActivity;
 
