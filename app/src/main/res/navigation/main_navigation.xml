@@ -24,4 +24,34 @@
         android:name="com.example.globalexperience.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/addEventActivity"
+        android:name="com.example.globalexperience.AddEventActivity"
+        android:label="activity_add_event"
+        tools:layout="@layout/activity_add_event" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.globalexperience.Fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <activity
+        android:id="@+id/groupEventActivity"
+        android:name="com.example.globalexperience.EventAdd.GroupEventActivity"
+        android:label="activity_group_event"
+        tools:layout="@layout/activity_group_event" />
+    <activity
+        android:id="@+id/individualEventActivity"
+        android:name="com.example.globalexperience.EventAdd.IndividualEventActivity"
+        android:label="activity_individual_event"
+        tools:layout="@layout/activity_individual_event" />
+    <activity
+        android:id="@+id/joinGroupEventActivity"
+        android:name="com.example.globalexperience.EventAdd.JoinGroupEventActivity"
+        android:label="activity_join_group_event"
+        tools:layout="@layout/activity_join_group_event" />
+    <activity
+        android:id="@+id/userProfileActivity"
+        android:name="com.example.globalexperience.UserProfileActivity"
+        android:label="activity_user_profile"
+        tools:layout="@layout/activity_user_profile" />
 </navigation>
