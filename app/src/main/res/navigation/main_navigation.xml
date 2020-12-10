@@ -2,4 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navigation" />
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashActivity">
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.example.globalexperience.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
+    <fragment
+        android:id="@+id/pendingFragment"
+        android:name="com.example.globalexperience.Fragments.PendingFragment"
+        android:label="fragment_pending"
+        tools:layout="@layout/fragment_pending" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.globalexperience.Fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.globalexperience.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>
