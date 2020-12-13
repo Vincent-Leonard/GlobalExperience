@@ -2,13 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_pending"
+        android:icon="@drawable/baseline_pending_actions_black_18dp"
         android:title="Pending" />
 
     <item
-        android:id="@+id/nav_add"
-        android:title="Add" />
+        android:id="@+id/placeholder"
+        android:title="" />
 
     <item
         android:id="@+id/nav_history"
+        android:icon="@drawable/baseline_history_black_18dp"
         android:title="History" />
 </menu>
