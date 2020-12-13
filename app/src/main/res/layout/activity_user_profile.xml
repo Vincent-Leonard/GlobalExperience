@@ -28,7 +28,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="PROFILE"
-        app:titleMarginStart="165dp"
+        app:titleMarginStart="160dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
         app:titleTextColor="#000000" />
 
     <View

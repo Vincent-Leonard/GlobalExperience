@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".EditActivity">
 
-    <ImageView
-        android:id="@+id/mountain6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:alpha="0.5"
-        android:src="@drawable/GunungV2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gunung_v2" />
-
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
