@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg">#DEC189</color>
+    <color name="detail">#E18745</color>
     <color name="floataction">#F5ECDB</color>
 </resources>
