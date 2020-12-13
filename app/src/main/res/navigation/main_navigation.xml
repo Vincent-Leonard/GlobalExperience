@@ -31,9 +31,9 @@
         tools:layout="@layout/activity_add_event" />
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.globalexperience.Fragments.DetailFragment"
+        android:name="com.example.globalexperience.DetailActivitiy"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/activity_detail" />
     <activity
         android:id="@+id/groupEventActivity"
         android:name="com.example.globalexperience.EventAdd.GroupEventActivity"
