@@ -51,7 +51,9 @@
             android:id="@+id/cardinner"
             android:layout_width="0dp"
             android:layout_height="230dp"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="@+id/card"
             app:layout_constraintStart_toStartOf="@+id/card"
             app:layout_constraintTop_toTopOf="@+id/card">
@@ -59,7 +61,7 @@
             <ImageView
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="211dp"
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/backgrounds/scenic" />
         </androidx.cardview.widget.CardView>
@@ -204,8 +206,10 @@
             android:background="@drawable/button_enabled"
             android:text="@string/resubmit"
             android:textColor="#000000"
+            android:theme="@style/Button.White"
             app:layout_constraintEnd_toEndOf="@+id/card"
             app:layout_constraintStart_toStartOf="@+id/card"
             app:layout_constraintTop_toBottomOf="@+id/text_pic" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
