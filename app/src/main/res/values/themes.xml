@@ -20,4 +20,7 @@
     <style name="Button.White" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="colorPrimary">@color/white</item>
     </style>
+    <style name="Button.Login" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="colorPrimary">@color/login</item>
+    </style>
 </resources>

@@ -5,4 +5,7 @@
     <string name="resubmit">Re-Submmit</string>
     <string name="email">Enter your Email</string>
     <string name="password">Enter your Password</string>
+    <string name="done">Done</string>
+    <string name="edit">Edit</string>
+    <string name="logout">Log Out</string>
 </resources>

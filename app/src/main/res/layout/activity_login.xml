@@ -22,9 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:alpha="0.5"
+        android:alpha="0.2"
         android:src="@drawable/gunung_v2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -174,8 +175,25 @@
             android:hint="@string/password" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/column_login"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:theme="@style/Button.Login"
+        app:layout_constraintBottom_toBottomOf="@+id/black_btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/black_btn_login"
+        app:layout_constraintStart_toStartOf="@+id/black_btn_login"
+        app:layout_constraintTop_toTopOf="@+id/black_btn_login" />
+
     <View
-        android:id="@+id/black3"
+        android:id="@+id/black_btn_login"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="60dp"
@@ -186,21 +204,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/black2" />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/column_login"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/black3"
-        app:layout_constraintEnd_toEndOf="@+id/black3"
-        app:layout_constraintStart_toStartOf="@+id/black3"
-        app:layout_constraintTop_toTopOf="@+id/black3" />
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textColor="#FFFFFF"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/black_btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/black_btn_login"
+        app:layout_constraintStart_toStartOf="@+id/black_btn_login"
+        app:layout_constraintTop_toTopOf="@+id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
