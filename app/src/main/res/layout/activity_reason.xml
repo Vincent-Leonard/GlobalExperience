@@ -7,7 +7,7 @@
     tools:context=".ReasonActivity">
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/r_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha="0.5"
@@ -19,8 +19,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <ImageView
+        android:id="@+id/r_mountain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:alpha="0.2"
+        android:src="@drawable/gunung_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/Reasoning"
+        android:id="@+id/r_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -29,38 +40,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/r_background"
         app:title="REASONING"
         app:titleMarginStart="140dp"
         app:titleTextAppearance="@style/Toolbar.TitleText"
         app:titleTextColor="#000000" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="150dp"
-        android:hint="hint"
-        android:text="Revision"
-        android:textColor="#000000"
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:text="Status"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Reasoning" />
+        app:layout_constraintTop_toBottomOf="@+id/r_toolbar" />
 
     <View
-        android:id="@+id/black_btn_login"
+        android:id="@+id/black_white_view"
         android:layout_width="0dp"
         android:layout_height="160dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/column_black"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+        app:layout_constraintEnd_toEndOf="@+id/r_background"
+        app:layout_constraintStart_toStartOf="@+id/r_background"
+        app:layout_constraintTop_toBottomOf="@+id/status" />
 
     <View
-        android:id="@+id/white4"
+        android:id="@+id/view_white"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
@@ -68,10 +78,32 @@
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         android:background="@drawable/column_white"
-        app:layout_constraintBottom_toBottomOf="@+id/black_btn_login"
-        app:layout_constraintEnd_toEndOf="@+id/black_btn_login"
-        app:layout_constraintStart_toStartOf="@+id/black_btn_login"
-        app:layout_constraintTop_toTopOf="@+id/black_btn_login" />
+        app:layout_constraintBottom_toBottomOf="@+id/black_white_view"
+        app:layout_constraintEnd_toEndOf="@+id/black_white_view"
+        app:layout_constraintStart_toStartOf="@+id/black_white_view"
+        app:layout_constraintTop_toTopOf="@+id/black_white_view" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/black_white_view"
+        app:layout_constraintEnd_toEndOf="@+id/black_white_view"
+        app:layout_constraintStart_toStartOf="@+id/black_white_view"
+        app:layout_constraintTop_toTopOf="@+id/black_white_view">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="#FFFFFF"
+            android:hint="@string/reason" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <View
         android:id="@+id/black_btn_done2"

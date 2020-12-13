@@ -8,4 +8,5 @@
     <string name="done">Done</string>
     <string name="edit">Edit</string>
     <string name="logout">Log Out</string>
+    <string name="reason">Enter your Reason</string>
 </resources>
