@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GlobalExperience">
-        <activity android:name=".UserProfileActivity"></activity>
+        <activity android:name=".ReasonActivity"></activity>
+        <activity android:name=".EditActivity" />
+        <activity android:name=".UserProfileActivity" />
         <activity android:name=".EventAdd.JoinGroupEventActivity" />
         <activity android:name=".EventAdd.GroupEventActivity" />
         <activity android:name=".EventAdd.IndividualEventActivity" />
