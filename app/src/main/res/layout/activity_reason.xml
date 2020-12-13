@@ -28,4 +28,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Reasoning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/floataction"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:title="REASONING"
+        app:titleMarginStart="150dp"
+        app:titleTextColor="#000000" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="150dp"
+        android:hint="hint"
+        android:text="Revision"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Reasoning" />
+
+    <View
+        android:id="@+id/black3"
+        android:layout_width="348dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/column_black"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText"
+        tools:layout_editor_absoluteX="30dp" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="348dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/column_white"
+        app:layout_constraintTop_toTopOf="@+id/black3"
+        tools:layout_editor_absoluteX="30dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
