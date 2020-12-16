@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new PendingFragment();
                         loadFragment(fragment);
                         return true;
-                    case R.id.nav_add:
+//                    case R.id.nav_add:
 //                        fragment = new CoursesFragment();
 //                        loadFragment(fragment);
-                        return true;
+//                        return true;
                     case R.id.nav_history:
                         fragment = new HistoryFragment();
                         loadFragment(fragment);

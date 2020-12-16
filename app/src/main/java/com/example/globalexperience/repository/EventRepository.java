@@ -5,9 +5,9 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.testlaravelapi.model.local.Event;
-import com.example.testlaravelapi.model.response.EventResponse;
-import com.example.testlaravelapi.network.RetrofitService;
+import com.example.globalexperience.model.local.Event;
+import com.example.globalexperience.model.response.EventResponse;
+import com.example.globalexperience.network.RetrofitService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
