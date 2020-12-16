@@ -103,6 +103,7 @@
         app:layout_constraintTop_toTopOf="@+id/white">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/column_white"
@@ -169,6 +170,7 @@
         app:layout_constraintTop_toTopOf="@+id/white2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/column_white"

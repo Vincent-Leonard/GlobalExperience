@@ -54,4 +54,13 @@
         android:name="com.example.globalexperience.UserProfileActivity"
         android:label="activity_user_profile"
         tools:layout="@layout/activity_user_profile" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.globalexperience.Fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 </navigation>
