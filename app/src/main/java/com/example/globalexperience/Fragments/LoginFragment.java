@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.globalexperience.HomeActivity;
+import com.example.globalexperience.MainActivity;
 import com.example.globalexperience.R;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 
@@ -51,7 +52,7 @@ public class LoginFragment extends Fragment {
         public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
             ButterKnife.bind(this, view);
-            Objects.requireNonNull(((HomeActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
+            Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
 
             //TODO: Place viewModel implementation here
             viewModel = ViewModelProviders.of(requireActivity()).get(LoginViewModel.class);
