@@ -9,4 +9,5 @@
     <string name="edit">Edit</string>
     <string name="logout">Log Out</string>
     <string name="reason">Enter your Reason</string>
+    <string name="GlobEx">Globex</string>
 </resources>
