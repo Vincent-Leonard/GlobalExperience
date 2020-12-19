@@ -6,25 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainer"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/main_navigation" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <View
         android:id="@+id/background"
         android:layout_width="0dp"
@@ -181,6 +162,7 @@
         android:id="@+id/textInputPassword"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:translationZ="10dp"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/white2"
@@ -207,7 +189,7 @@
         android:background="@drawable/column_login"
         android:textAllCaps="false"
         android:textSize="14sp"
-        android:theme="@style/Button.Login"
+        android:theme="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="@+id/black_white_view"
         app:layout_constraintEnd_toEndOf="@+id/black_white_view"
         app:layout_constraintStart_toStartOf="@+id/black_white_view"

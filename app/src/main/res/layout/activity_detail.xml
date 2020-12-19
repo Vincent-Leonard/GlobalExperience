@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:title="DETAIL"
             app:titleMarginStart="165dp"
-            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextAppearance="@style/AppTheme"
             app:titleTextColor="#000000" />
 
         <View
@@ -214,7 +214,7 @@
             android:textColor="#B4000000"
             android:textColorHint="#000000"
             android:textSize="18sp"
-            android:theme="@style/Button.White"
+            android:theme="@style/AppTheme"
             app:layout_constraintBottom_toBottomOf="@+id/black_btn_resub"
             app:layout_constraintEnd_toEndOf="@+id/black_btn_resub"
             app:layout_constraintStart_toStartOf="@+id/black_btn_resub"

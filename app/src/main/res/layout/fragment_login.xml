@@ -193,7 +193,7 @@
             android:background="@drawable/column_login"
             android:textAllCaps="false"
             android:textSize="14sp"
-            android:theme="@style/Button.Login"
+            android:theme="@style/AppTheme"
             app:layout_constraintBottom_toBottomOf="@+id/black_white_view"
             app:layout_constraintEnd_toEndOf="@+id/black_white_view"
             app:layout_constraintStart_toStartOf="@+id/black_white_view"

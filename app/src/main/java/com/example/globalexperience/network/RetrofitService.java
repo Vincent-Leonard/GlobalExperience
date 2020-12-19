@@ -3,6 +3,9 @@ package com.example.globalexperience.network;
 import android.util.Log;
 
 import com.example.globalexperience.model.response.EventResponse;
+import com.example.globalexperience.model.response.LecturerResponse;
+import com.example.globalexperience.model.response.StaffResponse;
+import com.example.globalexperience.model.response.StudentResponse;
 import com.example.globalexperience.model.response.TokenResponse;
 import com.example.globalexperience.utils.Constants;
 import com.google.gson.JsonObject;
@@ -62,6 +65,18 @@ public class RetrofitService {
 
     public Call<EventResponse> getEvents() {
         return endpoints.getEvents();
+    }
+
+    public Call<LecturerResponse> geLecturers() {
+        return endpoints.getLecturers();
+    }
+
+    public Call<StudentResponse> getStudents() {
+        return endpoints.getStudents();
+    }
+
+    public Call<StaffResponse> getStaffs() {
+        return endpoints.getStaffs();
     }
 
     public Call<JsonObject> logout() {

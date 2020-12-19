@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="PROFILE"
         app:titleMarginStart="160dp"
-        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextAppearance="@style/AppTheme"
         app:titleTextColor="#000000" />
 
     <androidx.core.widget.NestedScrollView
@@ -263,7 +263,7 @@
                 android:textColor="#B4000000"
                 android:textColorHint="#000000"
                 android:textSize="18sp"
-                android:theme="@style/Button.White"
+                android:theme="@style/AppTheme"
                 app:layout_constraintBottom_toBottomOf="@+id/black_btn_edit"
                 app:layout_constraintEnd_toEndOf="@+id/black_btn_edit"
                 app:layout_constraintStart_toStartOf="@+id/black_btn_edit"
@@ -292,7 +292,7 @@
                 android:textColor="#B4000000"
                 android:textColorHint="#000000"
                 android:textSize="18sp"
-                android:theme="@style/Button.White"
+                android:theme="@style/AppTheme"
                 app:layout_constraintBottom_toBottomOf="@+id/black_btn_logout"
                 app:layout_constraintEnd_toEndOf="@+id/black_btn_logout"
                 app:layout_constraintStart_toStartOf="@+id/black_btn_logout"

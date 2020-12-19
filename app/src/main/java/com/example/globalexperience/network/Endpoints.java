@@ -1,6 +1,9 @@
 package com.example.globalexperience.network;
 
 import com.example.globalexperience.model.response.EventResponse;
+import com.example.globalexperience.model.response.LecturerResponse;
+import com.example.globalexperience.model.response.StaffResponse;
+import com.example.globalexperience.model.response.StudentResponse;
 import com.example.globalexperience.model.response.TokenResponse;
 import com.google.gson.JsonObject;
 
@@ -18,6 +21,15 @@ public interface Endpoints {
 
     @GET("events")
     Call<EventResponse> getEvents();
+
+    @GET("Lecturer")
+    Call<LecturerResponse> getLecturers();
+
+    @GET("Student")
+    Call<StudentResponse> getStudents();
+
+    @GET("Staff")
+    Call<StaffResponse> getStaffs();
 
     @POST("logout")
     Call<JsonObject> logout();
