@@ -42,7 +42,7 @@ public class SplashFragment extends Fragment {
                 //request ke api check apakah token masih jalan / tidak (kalau tidak send request lagi pakai refresh token)
                 action = SplashFragmentDirections.actionSplashFragmentToLoginFragment();
             }else{
-                action = SplashFragmentDirections.actionSplashFragmentToLoginFragment();
+                action = SplashFragmentDirections.actionSplashFragmentToProfileFragment();
             }
             Navigation.findNavController(view).navigate(action);
         }, 2000);

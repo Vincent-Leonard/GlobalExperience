@@ -5,49 +5,13 @@
     android:id="@+id/main_navigation"
     app:startDestination="@id/splashFragment">
     <fragment
-        android:id="@+id/pendingFragment"
-        android:name="com.example.globalexperience.Fragments.PendingFragment"
-        android:label="fragment_pending"
-        tools:layout="@layout/fragment_pending" >
-        <action
-            android:id="@+id/action_pendingFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
-        <action
-            android:id="@+id/action_pendingFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/historyFragment"
-        android:name="com.example.globalexperience.Fragments.HistoryFragment"
-        android:label="fragment_history"
-        tools:layout="@layout/fragment_history" >
-        <action
-            android:id="@+id/action_historyFragment_to_pendingFragment"
-            app:destination="@id/pendingFragment" />
-        <action
-            android:id="@+id/action_historyFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.globalexperience.DetailActivitiy"
-        android:label="fragment_detail"
-        tools:layout="@layout/activity_detail" >
-        <action
-            android:id="@+id/action_detailFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
-        <action
-            android:id="@+id/action_detailFragment_to_pendingFragment"
-            app:destination="@id/pendingFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.globalexperience.Fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_pendingFragment"
-            app:destination="@id/pendingFragment" />
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -56,7 +20,12 @@
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_splashFragment_to_pendingFragment2"
-            app:destination="@id/pendingFragment" />
+            android:id="@+id/action_splashFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.globalexperience.Fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

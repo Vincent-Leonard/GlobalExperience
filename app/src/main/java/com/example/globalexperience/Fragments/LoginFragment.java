@@ -69,7 +69,7 @@ public class LoginFragment extends Fragment {
                         viewModel.login(email, password).observe(requireActivity(), tokenResponse -> {
                             if (tokenResponse != null) {
                                 helper.saveAccessToken(tokenResponse.getAuthorization());
-                                NavDirections actions = LoginFragmentDirections.actionLoginFragmentToPendingFragment();
+                                NavDirections actions = LoginFragmentDirections.actionLoginFragmentToProfileFragment();
                                 Navigation.findNavController(view).navigate(actions);
                                 Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                             }
