@@ -71,7 +71,7 @@ public class LoginFragment extends Fragment {
                             Toast.makeText(getActivity(), "token: " + tokenResponse, Toast.LENGTH_SHORT).show();
                             if (tokenResponse != null) {
                                 helper.saveAccessToken(tokenResponse.getAuthorization());
-                                NavDirections actions = LoginFragmentDirections.actionLoginFragmentToHomeActivity();
+                                NavDirections actions = LoginFragmentDirections.actionLoginFragmentToPendingFragment();
                                 Navigation.findNavController(view).navigate(actions);
                                 Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                             }

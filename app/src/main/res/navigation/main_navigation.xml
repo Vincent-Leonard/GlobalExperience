@@ -13,8 +13,8 @@
             android:id="@+id/action_loginFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_homeActivity"
-            app:destination="@id/homeActivity" />
+            android:id="@+id/action_loginFragment_to_pendingFragment"
+            app:destination="@id/pendingFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -35,11 +35,6 @@
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-    <activity
-        android:id="@+id/homeActivity"
-        android:name="com.example.globalexperience.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" />
     <fragment
         android:id="@+id/pendingFragment"
         android:name="com.example.globalexperience.Fragments.PendingFragment"

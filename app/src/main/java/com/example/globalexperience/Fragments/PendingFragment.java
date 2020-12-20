@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class PendingFragment extends Fragment {
+
+    @BindView(R.id.imgbtn_profile3)
+    ImageView imageView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,5 +44,13 @@ public class PendingFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         //TODO: Place viewModel implementation here
+    }
+
+    @OnClick(R.id.imgbtn_profile3)
+    public void onClick(View view) {
+        if (view.getId() == R.id.imgbtn_profile3) {
+            NavDirections action = PendingFragmentDirections.actionPendingFragmentToProfileFragment();
+            Navigation.findNavController(view).navigate(action);
+        }
     }
 }

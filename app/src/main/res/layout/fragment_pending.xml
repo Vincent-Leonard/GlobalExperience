@@ -55,6 +55,16 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        <ImageView
+            android:id="@+id/imgbtn_profile3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/baseline_person_black_18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
