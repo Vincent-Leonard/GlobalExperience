@@ -26,9 +26,6 @@ import butterknife.OnClick;
 
 public class PendingFragment extends Fragment {
 
-    @BindView(R.id.imgbtn_profile)
-    ImageView btnprofile;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,29 +33,11 @@ public class PendingFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_pending, container, false);
     }
 
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//        ButterKnife.bind(this, view);
-//
-//        //TODO: Place viewModel implementation here
-//        helper = SharedPreferenceHelper.getInstance(requireActivity());
-//        viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
-//        viewModel.init(helper.getAccessToken());
-//        Log.d("access token", helper.getAccessToken());
-//    }
-//
-//    @OnClick(R.id.btn_logout)
-//    public void logout(View view) {
-//        if (view.getId() == R.id.btn_logout) {
-//            viewModel.logout().observe(requireActivity(), message -> {
-//                if (!message.isEmpty()) {
-//                    helper.clearPref();
-//                    NavDirections action = ProfileFragmentDirections.actionProfileFragmentToLoginFragment();
-//                    Navigation.findNavController(view).navigate(action);
-//                    Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//        }
-//    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
+
+        //TODO: Place viewModel implementation here
+    }
 }

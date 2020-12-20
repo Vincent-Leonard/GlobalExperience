@@ -8,14 +8,19 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.globalexperience.Fragments.HistoryFragment;
 import com.example.globalexperience.Fragments.PendingFragment;
+import com.example.globalexperience.Fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+    Fragment fragment;
+    ImageView btn_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +36,6 @@ public class HomeActivity extends AppCompatActivity {
                         fragment = new PendingFragment();
                         loadFragment(fragment);
                         return true;
-//                    case R.id.nav_add:
-//                        fragment = new CoursesFragment();
-//                        loadFragment(fragment);
-//                        return true;
                     case R.id.nav_history:
                         fragment = new HistoryFragment();
                         loadFragment(fragment);
@@ -43,7 +44,17 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        btn_profile = findViewById(R.id.imgbtn_profile2);
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragment = new ProfileFragment();
+                loadFragment(fragment);
+            }
+        });
     }
+
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
