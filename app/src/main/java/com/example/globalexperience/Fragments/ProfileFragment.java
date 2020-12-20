@@ -12,6 +12,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +89,8 @@ public class ProfileFragment extends Fragment {
         //TODO: Place viewModel implementation here
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
-
+        viewModel.init(helper.getAccessToken());
+        Log.d("access token", helper.getAccessToken());
     }
 
     @OnClick(R.id.btn_logout)
@@ -104,11 +106,4 @@ public class ProfileFragment extends Fragment {
             });
         }
     }
-
-
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        getActivity().getViewModelStore().clear();
-//    }
 }

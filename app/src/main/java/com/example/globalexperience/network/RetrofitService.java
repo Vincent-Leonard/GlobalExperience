@@ -33,11 +33,13 @@ public class RetrofitService {
                 return chain.proceed(request);
             });
         } else {
+            Log.d("tinara keren", "tintin");
             client.addInterceptor(chain -> {
                 Request request = chain.request().newBuilder()
                         .addHeader("Accept", "application/json")
                         .addHeader("Authorization", token)
                         .build();
+                Log.d("tinara hebat", "tintin");
                 return chain.proceed(request);
             });
         }

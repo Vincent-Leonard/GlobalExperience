@@ -67,11 +67,11 @@ public class LoginFragment extends Fragment {
                     if (!editEmail.getText().toString().isEmpty() && !editPassword.getText().toString().isEmpty()) {
                         String email = editEmail.getText().toString().trim();
                         String password = editPassword.getText().toString().trim();
-                        Toast.makeText(getActivity(), "email: " + email, Toast.LENGTH_SHORT).show();
                         viewModel.login(email, password).observe(requireActivity(), tokenResponse -> {
+                            Toast.makeText(getActivity(), "token: " + tokenResponse, Toast.LENGTH_SHORT).show();
                             if (tokenResponse != null) {
                                 helper.saveAccessToken(tokenResponse.getAuthorization());
-                                NavDirections actions = LoginFragmentDirections.actionLoginFragmentToProfileFragment();
+                                NavDirections actions = LoginFragmentDirections.actionLoginFragmentToHomeActivity();
                                 Navigation.findNavController(view).navigate(actions);
                                 Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                             }

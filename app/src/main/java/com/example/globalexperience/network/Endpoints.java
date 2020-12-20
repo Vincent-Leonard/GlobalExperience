@@ -15,7 +15,7 @@ import retrofit2.http.POST;
 
 public interface Endpoints {
 
-    @POST("login")
+    @POST("api-login")
     @FormUrlEncoded
     Call<TokenResponse> login (@Field("email") String email, @Field("password") String password);
 
