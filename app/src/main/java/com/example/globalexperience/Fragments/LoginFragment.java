@@ -52,7 +52,7 @@ public class LoginFragment extends Fragment {
         public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
             ButterKnife.bind(this, view);
-            Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
+//            Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
 
             //TODO: Place viewModel implementation here
             viewModel = ViewModelProviders.of(requireActivity()).get(LoginViewModel.class);
@@ -67,6 +67,7 @@ public class LoginFragment extends Fragment {
                     if (!editEmail.getText().toString().isEmpty() && !editPassword.getText().toString().isEmpty()) {
                         String email = editEmail.getText().toString().trim();
                         String password = editPassword.getText().toString().trim();
+                        Toast.makeText(getActivity(), "email: " + email, Toast.LENGTH_SHORT).show();
                         viewModel.login(email, password).observe(requireActivity(), tokenResponse -> {
                             if (tokenResponse != null) {
                                 helper.saveAccessToken(tokenResponse.getAuthorization());
