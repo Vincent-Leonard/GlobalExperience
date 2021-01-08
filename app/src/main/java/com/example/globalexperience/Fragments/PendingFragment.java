@@ -31,6 +31,8 @@ public class PendingFragment extends Fragment {
     @BindView(R.id.imgbtn_profile3)
     ImageView imageView;
 
+    public PendingFragment() {}
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

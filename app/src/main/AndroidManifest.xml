@@ -22,12 +22,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReasonActivity" />
-        <activity android:name=".EditActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".EventAdd.JoinGroupEventActivity" />
         <activity android:name=".EventAdd.GroupEventActivity" />
         <activity android:name=".EventAdd.IndividualEventActivity" />
-        <activity android:name=".AddEventActivity" />
         <activity android:name=".SplashActivity"/>
         <activity android:name=".LoginActivity" />
         <activity android:name=".HomeActivity" />

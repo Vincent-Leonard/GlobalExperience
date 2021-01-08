@@ -1,5 +1,5 @@
 package com.example.globalexperience.utils;
 
 public class Constants {
-    public final static String BASE_URL = "http://172.20.10.4/globex/public/api/";
+    public final static String BASE_URL = "http://192.168.100.2/webglobex/public/api/";
 }

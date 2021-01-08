@@ -24,6 +24,7 @@ public class HistoryFragment extends Fragment {
     @BindView(R.id.imgbtn_profile)
     ImageView imageView;
 
+    public HistoryFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
