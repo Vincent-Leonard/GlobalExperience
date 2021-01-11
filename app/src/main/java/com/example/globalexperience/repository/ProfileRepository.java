@@ -73,4 +73,34 @@ public class ProfileRepository {
         });
         return message;
     }
+
+    public LiveData<String> profile() {
+        MutableLiveData<String> message = new MutableLiveData<>();
+
+        apiService.logout().enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.d(TAG, "onResponse: " + response.code());
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        try {
+                            JSONObject object = new JSONObject(new Gson().toJson(response.body()));
+                            String msg = object.getString("message");
+                            Log.d(TAG, "onResponse: " + msg);
+                            message.postValue(msg);
+                            resetInstance();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+            }
+        });
+        return message;
+    }
 }

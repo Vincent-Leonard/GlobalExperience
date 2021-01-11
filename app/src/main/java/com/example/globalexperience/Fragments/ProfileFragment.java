@@ -22,7 +22,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.globalexperience.R;
+import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -67,6 +69,7 @@ public class ProfileFragment extends Fragment {
 
     private ProfileViewModel viewModel;
     private SharedPreferenceHelper helper;
+    public Student student;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -91,6 +94,14 @@ public class ProfileFragment extends Fragment {
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
         viewModel.init(helper.getAccessToken());
         Log.d("access token", helper.getAccessToken());
+
+//        if (getArguments() != null) {
+//            student = ProfileFragmentArgs.fromBundle(getArguments()).getStudent();
+            StudentProfile(student);
+//            observeStudentiewModel(Integer.parseInt(tvShow.getId_show()));
+//        }
+
+
     }
 
     @OnClick(R.id.btn_logout)
@@ -105,5 +116,11 @@ public class ProfileFragment extends Fragment {
                 }
             });
         }
+    }
+
+    private void StudentProfile(Student student) {
+        name.setText(student.getStudent_name());
+        nim.setText(student.getNim());
+        email.setText(student.getStudent_email());
     }
 }

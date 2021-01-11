@@ -1,5 +1,6 @@
 package com.example.globalexperience.network;
 
+import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.response.EventResponse;
 import com.example.globalexperience.model.response.LecturerResponse;
 import com.example.globalexperience.model.response.StaffResponse;
@@ -18,6 +19,9 @@ public interface Endpoints {
     @POST("api-login")
     @FormUrlEncoded
     Call<TokenResponse> login (@Field("email") String email, @Field("password") String password);
+
+    @GET("student-profile")
+    Call<Student> getStudent();
 
     @GET("events")
     Call<EventResponse> getEvents();

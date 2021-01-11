@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Student {
     @SerializedName("nim")
-    String nip;
+    String nim;
     @SerializedName("student_name")
     String student_name;
     @SerializedName("student_email")
@@ -25,8 +25,8 @@ public class Student {
     public Student(){
     }
 
-    public Student(String nip, String student_name, String student_email, String batch, String description, String student_photo, String student_gender, String student_phone, String student_line_account) {
-        this.nip = nip;
+    public Student(String nim, String student_name, String student_email, String batch, String description, String student_photo, String student_gender, String student_phone, String student_line_account) {
+        this.nim = nim;
         this.student_name = student_name;
         this.student_email = student_email;
         this.batch = batch;
@@ -37,12 +37,12 @@ public class Student {
         this.student_line_account = student_line_account;
     }
 
-    public String getNip() {
-        return nip;
+    public String getNim() {
+        return nim;
     }
 
-    public void setNip(String nip) {
-        this.nip = nip;
+    public void setNim(String nip) {
+        this.nim = nim;
     }
 
     public String getStudent_name() {
