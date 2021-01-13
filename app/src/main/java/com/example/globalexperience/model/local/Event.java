@@ -2,48 +2,105 @@ package com.example.globalexperience.model.local;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.w3c.dom.Text;
+
 public class Event {
-    @SerializedName("event_title")
-    String title;
-    @SerializedName("event_description")
-    String description;
-    @SerializedName("created_by")
-    String created_by;
+    @SerializedName("event")
+    String name;
+    @SerializedName("type")
+    String type;
+    @SerializedName("event_date")
+    String date;
+    @SerializedName("duration")
+    String duration;
+    @SerializedName("country")
+    String country;
+    @SerializedName("city")
+    String city;
+    @SerializedName("organizer")
+    String organizer;
+    @SerializedName("file")
+    Text file;
     @SerializedName("status")
     String status;
 
     public Event() {
     }
 
-    public Event(String title, String description, String created_by, String status) {
-        this.title = title;
-        this.description = description;
-        this.created_by = created_by;
+    public Event(String name, String type, String date, String duration, String country, String city, String organizer, Text file, String status) {
+        this.name = name;
+        this.type = type;
+        this.date = date;
+        this.duration = duration;
+        this.country = country;
+        this.city = city;
+        this.organizer = organizer;
+        this.file = file;
         this.status = status;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getType() {
+        return type;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getCreated_by() {
-        return created_by;
+    public String getDate() {
+        return date;
     }
 
-    public void setCreated_by(String created_by) {
-        this.created_by = created_by;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(String organizer) {
+        this.organizer = organizer;
+    }
+
+    public Text getFile() {
+        return file;
+    }
+
+    public void setFile(Text file) {
+        this.file = file;
     }
 
     public String getStatus() {
