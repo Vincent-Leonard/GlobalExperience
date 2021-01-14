@@ -25,6 +25,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.globalexperience.R;
 import com.example.globalexperience.model.local.Student;
+import com.example.globalexperience.model.local.User;
+import com.example.globalexperience.model.response.ProfileResponse;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -70,6 +72,7 @@ public class ProfileFragment extends Fragment {
     private ProfileViewModel viewModel;
     private SharedPreferenceHelper helper;
     public Student student;
+    public User user;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -97,9 +100,11 @@ public class ProfileFragment extends Fragment {
 
 //        if (getArguments() != null) {
 //            student = ProfileFragmentArgs.fromBundle(getArguments()).getStudent();
-            StudentProfile(student);
-//            observeStudentiewModel(Integer.parseInt(tvShow.getId_show()));
+//            StudentProfile(user);
+//            observeProfileViewModel(Integer.parseInt(user.getId()));
 //        }
+
+        viewModel.getProfile().observe(requireActivity(), observer);
 
 
     }
@@ -118,9 +123,17 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private void StudentProfile(Student student) {
-        name.setText(student.getStudent_name());
-        nim.setText(student.getNim());
-        email.setText(student.getStudent_email());
-    }
+    private Observer<User> observer = new Observer<User>() {
+        @Override
+        public void onChanged(User user) {
+            nim.setText(user.getStudentResults().getNim());
+            email.setText(user.getEmail());
+            name.setText(user.getStudentResults().getStudent_name());
+            gender.setText(user.getStudentResults().getStudent_gender());
+            batch.setText(user.getStudentResults().getBatch());
+            phone.setText(user.getStudentResults().getStudent_phone());
+            line.setText(user.getStudentResults().getStudent_line_account());
+        }
+    };
+
 }

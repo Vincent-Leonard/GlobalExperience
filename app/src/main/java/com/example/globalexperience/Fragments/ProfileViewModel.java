@@ -6,7 +6,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.globalexperience.model.local.Event;
 import com.example.globalexperience.model.local.Student;
+import com.example.globalexperience.model.local.User;
+import com.example.globalexperience.model.response.ProfileResponse;
 import com.example.globalexperience.model.response.TokenResponse;
 import com.example.globalexperience.repository.AuthRepository;
 import com.example.globalexperience.repository.ProfileRepository;
@@ -26,6 +29,15 @@ public class ProfileViewModel extends ViewModel {
 
     public LiveData<String> logout() {
         return repository.logout();
+    }
+
+//    public LiveData<ProfileResponse> getProfile() {
+//        return repository.getProfile();
+//    }
+
+    public MutableLiveData<User> getProfile() {
+//        Log.d("Hello","VIewModel");
+        return repository.getUser();
     }
 
     public void init(String token){

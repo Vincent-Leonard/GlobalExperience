@@ -5,6 +5,7 @@ import android.util.Log;
 import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.response.EventResponse;
 import com.example.globalexperience.model.response.LecturerResponse;
+import com.example.globalexperience.model.response.ProfileResponse;
 import com.example.globalexperience.model.response.StaffResponse;
 import com.example.globalexperience.model.response.StudentResponse;
 import com.example.globalexperience.model.response.TokenResponse;
@@ -70,9 +71,7 @@ public class RetrofitService {
         return endpoints.getEvents();
     }
 
-    public Call<Student> getStudent() {
-        return endpoints.getStudent();
-    }
+//    public Call<Student> getStudent() { return endpoints.getStudent(); }
 
     public Call<LecturerResponse> getLecturers() {
         return endpoints.getLecturers();
@@ -84,6 +83,10 @@ public class RetrofitService {
 
     public Call<StaffResponse> getStaffs() {
         return endpoints.getStaffs();
+    }
+
+    public Call<ProfileResponse> getProfile() {
+        return endpoints.getProfile();
     }
 
     public Call<JsonObject> logout() {

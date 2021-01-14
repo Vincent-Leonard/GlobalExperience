@@ -6,7 +6,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.globalexperience.model.local.Event;
+import com.example.globalexperience.model.local.User;
 import com.example.globalexperience.model.response.EventResponse;
+import com.example.globalexperience.model.response.ProfileResponse;
+import com.example.globalexperience.model.response.StudentResponse;
 import com.example.globalexperience.network.RetrofitService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -74,33 +77,28 @@ public class ProfileRepository {
         return message;
     }
 
-    public LiveData<String> profile() {
-        MutableLiveData<String> message = new MutableLiveData<>();
+    public MutableLiveData<User> getUser() {
+        MutableLiveData<User> userProfile = new MutableLiveData<>();
+        Log.d(TAG, "Mutable");
 
-        apiService.logout().enqueue(new Callback<JsonObject>() {
+        apiService.getProfile().enqueue(new Callback<ProfileResponse>() {
             @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
                 Log.d(TAG, "onResponse: " + response.code());
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
-                        try {
-                            JSONObject object = new JSONObject(new Gson().toJson(response.body()));
-                            String msg = object.getString("message");
-                            Log.d(TAG, "onResponse: " + msg);
-                            message.postValue(msg);
-                            resetInstance();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        Log.d(TAG, "onResponse: Program " + response.body().getResults());
+                        userProfile.postValue(response.body().getResults());
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
-
+            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t.getMessage());
             }
         });
-        return message;
+
+        return userProfile;
     }
 }

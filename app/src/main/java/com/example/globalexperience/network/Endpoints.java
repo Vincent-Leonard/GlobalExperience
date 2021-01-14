@@ -3,6 +3,7 @@ package com.example.globalexperience.network;
 import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.response.EventResponse;
 import com.example.globalexperience.model.response.LecturerResponse;
+import com.example.globalexperience.model.response.ProfileResponse;
 import com.example.globalexperience.model.response.StaffResponse;
 import com.example.globalexperience.model.response.StudentResponse;
 import com.example.globalexperience.model.response.TokenResponse;
@@ -20,8 +21,8 @@ public interface Endpoints {
     @FormUrlEncoded
     Call<TokenResponse> login (@Field("email") String email, @Field("password") String password);
 
-    @GET("student-profile")
-    Call<Student> getStudent();
+    @GET("profile")
+    Call<ProfileResponse> getProfile();
 
     @GET("events")
     Call<EventResponse> getEvents();
