@@ -1,5 +1,7 @@
 package com.example.globalexperience.Fragments;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.globalexperience.R;
 import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.local.User;
@@ -30,6 +33,7 @@ import com.example.globalexperience.model.response.ProfileResponse;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.File;
 import java.util.List;
 import java.util.Objects;
 
@@ -126,10 +130,24 @@ public class ProfileFragment extends Fragment {
     private Observer<User> observer = new Observer<User>() {
         @Override
         public void onChanged(User user) {
+            File imgFile = new  File("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo());
+
+            if(imgFile.exists()){
+                Toast.makeText(getActivity(), "ADA", Toast.LENGTH_SHORT).show();
+                Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                photo.setImageBitmap(myBitmap);
+            }
+
+            Glide.with(getActivity()).load("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo()).centerCrop().into(photo);
             nim.setText(user.getStudentResults().getNim());
             email.setText(user.getEmail());
             name.setText(user.getStudentResults().getStudent_name());
-            gender.setText(user.getStudentResults().getStudent_gender());
+            if(user.getStudentResults().getStudent_gender() == "0"){
+                gender.setText("Male");
+            }else{
+                gender.setText("Female");
+            }
+            major.setText(user.getStudentResults().getDepartment());
             batch.setText(user.getStudentResults().getBatch());
             phone.setText(user.getStudentResults().getStudent_phone());
             line.setText(user.getStudentResults().getStudent_line_account());
