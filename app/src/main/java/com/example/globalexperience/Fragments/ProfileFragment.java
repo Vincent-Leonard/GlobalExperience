@@ -130,27 +130,56 @@ public class ProfileFragment extends Fragment {
     private Observer<User> observer = new Observer<User>() {
         @Override
         public void onChanged(User user) {
-            File imgFile = new  File("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo());
 
-            if(imgFile.exists()){
-                Toast.makeText(getActivity(), "ADA", Toast.LENGTH_SHORT).show();
-                Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-                photo.setImageBitmap(myBitmap);
+            if (user.getStudentResults() != null){
+                File imgFile = new  File("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo());
+
+                if(imgFile.exists()){
+                    Toast.makeText(getActivity(), "ADA", Toast.LENGTH_SHORT).show();
+                    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                    photo.setImageBitmap(myBitmap);
+                }
+
+                Glide.with(getActivity()).load("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo()).centerCrop().into(photo);
+                nim.setText(user.getStudentResults().getNim());
+                email.setText(user.getEmail());
+                name.setText(user.getStudentResults().getStudent_name());
+                if(user.getStudentResults().getStudent_gender() == "0"){
+                    gender.setText("Male");
+                }else{
+                    gender.setText("Female");
+                }
+                major.setText(user.getStudentResults().getDepartment());
+                batch.setText(user.getStudentResults().getBatch());
+                phone.setText(user.getStudentResults().getStudent_phone());
+                line.setText(user.getStudentResults().getStudent_line_account());
+            } else if (user.getLecturerResults() != null){
+                nim.setText(user.getLecturerResults().getNip());
+                email.setText(user.getEmail());
+                name.setText(user.getLecturerResults().getLecturer_name());
+                if(user.getLecturerResults().getLecturer_gender() == "0"){
+                    gender.setText("Male");
+                }else{
+                    gender.setText("Female");
+                }
+                major.setText(user.getLecturerResults().getDepartment());
+                phone.setText(user.getLecturerResults().getLecturer_phone());
+                line.setText(user.getLecturerResults().getLecturer_line_account());
+            } else if (user.getStaffResults() != null){
+                nim.setText(user.getStaffResults().getNip());
+                email.setText(user.getEmail());
+                name.setText(user.getStaffResults().getStaff_name());
+                if(user.getStaffResults().getStaff_gender() == "0"){
+                    gender.setText("Male");
+                }else{
+                    gender.setText("Female");
+                }
+                major.setText(user.getStaffResults().getDepartment());
+                phone.setText(user.getStaffResults().getStaff_phone());
+                line.setText(user.getStaffResults().getStaff_line_account());
             }
 
-            Glide.with(getActivity()).load("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo()).centerCrop().into(photo);
-            nim.setText(user.getStudentResults().getNim());
-            email.setText(user.getEmail());
-            name.setText(user.getStudentResults().getStudent_name());
-            if(user.getStudentResults().getStudent_gender() == "0"){
-                gender.setText("Male");
-            }else{
-                gender.setText("Female");
-            }
-            major.setText(user.getStudentResults().getDepartment());
-            batch.setText(user.getStudentResults().getBatch());
-            phone.setText(user.getStudentResults().getStudent_phone());
-            line.setText(user.getStudentResults().getStudent_line_account());
+
         }
     };
 

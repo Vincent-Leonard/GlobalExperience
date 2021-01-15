@@ -19,11 +19,13 @@ public class Staff {
     String staff_phone;
     @SerializedName("staff_line_account")
     String staff_line_account;
+    @SerializedName("department_id")
+    String department;
 
     public Staff(){
     }
 
-    public Staff(String nip, String staff_name, String staff_email, String description, String staff_photo, String staff_gender, String staff_phone, String staff_line_account) {
+    public Staff(String nip, String staff_name, String staff_email, String description, String staff_photo, String staff_gender, String staff_phone, String staff_line_account, String department) {
         this.nip = nip;
         this.staff_name = staff_name;
         this.staff_email = staff_email;
@@ -32,6 +34,7 @@ public class Staff {
         this.staff_gender = staff_gender;
         this.staff_phone = staff_phone;
         this.staff_line_account = staff_line_account;
+        this.department = department;
     }
 
     public String getNip() {
@@ -40,5 +43,69 @@ public class Staff {
 
     public void setNip(String nip) {
         this.nip = nip;
+    }
+
+    public String getStaff_name() {
+        return staff_name;
+    }
+
+    public void setStaff_name(String staff_name) {
+        this.staff_name = staff_name;
+    }
+
+    public String getStaff_email() {
+        return staff_email;
+    }
+
+    public void setStaff_email(String staff_email) {
+        this.staff_email = staff_email;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getStaff_photo() {
+        return staff_photo;
+    }
+
+    public void setStaff_photo(String staff_photo) {
+        this.staff_photo = staff_photo;
+    }
+
+    public String getStaff_gender() {
+        return staff_gender;
+    }
+
+    public void setStaff_gender(String staff_gender) {
+        this.staff_gender = staff_gender;
+    }
+
+    public String getStaff_phone() {
+        return staff_phone;
+    }
+
+    public void setStaff_phone(String staff_phone) {
+        this.staff_phone = staff_phone;
+    }
+
+    public String getStaff_line_account() {
+        return staff_line_account;
+    }
+
+    public void setStaff_line_account(String staff_line_account) {
+        this.staff_line_account = staff_line_account;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 }

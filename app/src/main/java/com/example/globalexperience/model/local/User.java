@@ -16,6 +16,12 @@ public class User {
     @SerializedName("student")
     private Student studentResults;
 
+    @SerializedName("lecturer")
+    private Lecturer lecturerResults;
+
+    @SerializedName("staff")
+    private Staff staffResults;
+
     public Student getStudentResults() {
         return studentResults;
     }
@@ -23,11 +29,29 @@ public class User {
     public User(){
     }
 
-    public User(String email, String role, String admin, Student studentResults) {
+    public Lecturer getLecturerResults() {
+        return lecturerResults;
+    }
+
+    public void setLecturerResults(Lecturer lecturerResults) {
+        this.lecturerResults = lecturerResults;
+    }
+
+    public Staff getStaffResults() {
+        return staffResults;
+    }
+
+    public void setStaffResults(Staff staffResults) {
+        this.staffResults = staffResults;
+    }
+
+    public User(String email, String role, String admin, Student studentResults, Lecturer lecturerResults, Staff staffResults) {
         this.email = email;
         this.role = role;
         this.admin = admin;
         this.studentResults = studentResults;
+        this.lecturerResults = lecturerResults;
+        this.staffResults = staffResults;
     }
 
     public String getEmail() {
