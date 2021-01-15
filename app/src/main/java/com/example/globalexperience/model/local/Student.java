@@ -21,13 +21,13 @@ public class Student {
     String student_phone;
     @SerializedName("student_line_account")
     String student_line_account;
-    @SerializedName("department_id")
-    String department;
+    @SerializedName("department")
+    private Department department;
 
     public Student(){
     }
 
-    public Student(String nim, String student_name, String student_email, String batch, String description, String student_photo, String student_gender, String student_phone, String student_line_account, String department) {
+    public Student(String nim, String student_name, String student_email, String batch, String description, String student_photo, String student_gender, String student_phone, String student_line_account, Department department) {
         this.nim = nim;
         this.student_name = student_name;
         this.student_email = student_email;
@@ -112,11 +112,11 @@ public class Student {
         this.student_line_account = student_line_account;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 }
