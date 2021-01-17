@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.globalexperience.R;
@@ -42,6 +45,10 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.ViewHold
         holder.type.setText(event.getType());
         holder.date.setText(event.getDate());
         holder.status.setText(event.getStatus());
+        holder.cardview.setOnClickListener(v -> {
+            NavDirections action = PendingFragmentDirections.actionPendingFragmentToDetailFragment(event);
+            Navigation.findNavController(v).navigate(action);
+        });
     }
 
     @Override
@@ -52,6 +59,7 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name, type, date, status;
+        CardView cardview;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +67,7 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.ViewHold
             type = itemView.findViewById(R.id.event_type_card);
             date = itemView.findViewById(R.id.event_date_card);
             status = itemView.findViewById(R.id.event_status_card);
+            cardview = itemView.findViewById(R.id.cardView);
         }
     }
 }
