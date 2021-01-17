@@ -104,7 +104,11 @@ public class DetailFragment extends Fragment {
     private void initEvent(Event event) {
         Glide.with(getActivity()).load(event.getFile()).into(photo);
         name.setText(event.getName());
-        type.setText(event.getType());
+        if(event.getType() == "0"){
+            type.setText("Student Exchange");
+        }else{
+            type.setText("Student Excursion");
+        }
         date.setText(event.getDate());
         duration.setText(event.getDuration());
         country.setText(event.getCountry());

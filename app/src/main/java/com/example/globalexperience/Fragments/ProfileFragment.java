@@ -135,10 +135,10 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getStudentResults().getNim());
                 email.setText(user.getEmail());
                 name.setText(user.getStudentResults().getStudent_name());
-                if(user.getStudentResults().getStudent_gender() == "0"){
-                    gender.setText("Male");
-                }else{
+                if(user.getStudentResults().getStudent_gender() == "1"){
                     gender.setText("Female");
+                }else{
+                    gender.setText("Male");
                 }
                 major.setText(user.getStudentResults().getDepartment().getDepartmentName());
                 batch.setText(user.getStudentResults().getBatch());
@@ -148,10 +148,10 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getLecturerResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getLecturerResults().getLecturer_name());
-                if(user.getLecturerResults().getLecturer_gender() == "0"){
-                    gender.setText("Male");
-                }else{
+                if(user.getStudentResults().getStudent_gender() == "1"){
                     gender.setText("Female");
+                }else{
+                    gender.setText("Male");
                 }
                 major.setText(user.getLecturerResults().getDepartment().getDepartmentName());
                 phone.setText(user.getLecturerResults().getLecturer_phone());
@@ -160,17 +160,15 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getStaffResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getStaffResults().getStaff_name());
-                if(user.getStaffResults().getStaff_gender() == "0"){
-                    gender.setText("Male");
-                }else{
+                if(user.getStudentResults().getStudent_gender() == "1"){
                     gender.setText("Female");
+                }else{
+                    gender.setText("Male");
                 }
                 major.setText(user.getStaffResults().getDepartment().getDepartmentName());
                 phone.setText(user.getStaffResults().getStaff_phone());
                 line.setText(user.getStaffResults().getStaff_line_account());
             }
-
-
         }
     };
 
