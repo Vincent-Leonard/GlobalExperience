@@ -21,13 +21,13 @@ public class Lecturer {
     String lecturer_phone;
     @SerializedName("lecturer_line_account")
     String lecturer_line_account;
-    @SerializedName("department_id")
-    String department;
+    @SerializedName("department")
+    private Department department;
 
     public Lecturer(){
     }
 
-    public Lecturer(String nip, String nidn, String lecturer_name, String lecturer_email, String description, String lecturer_photo, String lecturer_gender, String lecturer_phone, String lecturer_line_account, String department) {
+    public Lecturer(String nip, String nidn, String lecturer_name, String lecturer_email, String description, String lecturer_photo, String lecturer_gender, String lecturer_phone, String lecturer_line_account, Department department) {
         this.nip = nip;
         this.nidn = nidn;
         this.lecturer_name = lecturer_name;
@@ -112,11 +112,11 @@ public class Lecturer {
         this.lecturer_line_account = lecturer_line_account;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 }

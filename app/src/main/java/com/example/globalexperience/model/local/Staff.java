@@ -19,13 +19,13 @@ public class Staff {
     String staff_phone;
     @SerializedName("staff_line_account")
     String staff_line_account;
-    @SerializedName("department_id")
-    String department;
+    @SerializedName("department")
+    private Department department;
 
     public Staff(){
     }
 
-    public Staff(String nip, String staff_name, String staff_email, String description, String staff_photo, String staff_gender, String staff_phone, String staff_line_account, String department) {
+    public Staff(String nip, String staff_name, String staff_email, String description, String staff_photo, String staff_gender, String staff_phone, String staff_line_account, Department department) {
         this.nip = nip;
         this.staff_name = staff_name;
         this.staff_email = staff_email;
@@ -101,11 +101,11 @@ public class Staff {
         this.staff_line_account = staff_line_account;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 }

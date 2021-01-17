@@ -23,11 +23,13 @@ public class Event {
     Text file;
     @SerializedName("status")
     String status;
+    @SerializedName("pivot")
+    private Pivot pivot;
 
     public Event() {
     }
 
-    public Event(String name, String type, String date, String duration, String country, String city, String organizer, Text file, String status) {
+    public Event(String name, String type, String date, String duration, String country, String city, String organizer, Text file, String status, Pivot pivot) {
         this.name = name;
         this.type = type;
         this.date = date;
@@ -37,6 +39,15 @@ public class Event {
         this.organizer = organizer;
         this.file = file;
         this.status = status;
+        this.pivot = pivot;
+    }
+
+    public Pivot getPivot() {
+        return pivot;
+    }
+
+    public void setPivot(Pivot pivot) {
+        this.pivot = pivot;
     }
 
     public String getName() {

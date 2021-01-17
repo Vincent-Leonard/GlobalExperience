@@ -140,7 +140,7 @@ public class ProfileFragment extends Fragment {
                 }else{
                     gender.setText("Female");
                 }
-                major.setText(user.getStudentResults().getDepartment());
+                major.setText(user.getStudentResults().getDepartment().getDepartmentName());
                 batch.setText(user.getStudentResults().getBatch());
                 phone.setText(user.getStudentResults().getStudent_phone());
                 line.setText(user.getStudentResults().getStudent_line_account());
@@ -153,7 +153,7 @@ public class ProfileFragment extends Fragment {
                 }else{
                     gender.setText("Female");
                 }
-                major.setText(user.getLecturerResults().getDepartment());
+                major.setText(user.getLecturerResults().getDepartment().getDepartmentName());
                 phone.setText(user.getLecturerResults().getLecturer_phone());
                 line.setText(user.getLecturerResults().getLecturer_line_account());
             } else if (user.getStaffResults() != null){
@@ -165,7 +165,7 @@ public class ProfileFragment extends Fragment {
                 }else{
                     gender.setText("Female");
                 }
-                major.setText(user.getStaffResults().getDepartment());
+                major.setText(user.getStaffResults().getDepartment().getDepartmentName());
                 phone.setText(user.getStaffResults().getStaff_phone());
                 line.setText(user.getStaffResults().getStaff_line_account());
             }
