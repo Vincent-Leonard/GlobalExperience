@@ -1,10 +1,13 @@
 package com.example.globalexperience.model.local;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 import org.w3c.dom.Text;
 
-public class Event {
+public class Event implements Parcelable {
     @SerializedName("event")
     String name;
     @SerializedName("type")
@@ -39,6 +42,7 @@ public class Event {
         this.organizer = organizer;
         this.file = file;
         this.status = status;
+<<<<<<< Updated upstream
         this.pivot = pivot;
     }
 
@@ -48,6 +52,54 @@ public class Event {
 
     public void setPivot(Pivot pivot) {
         this.pivot = pivot;
+||||||| constructed merge base
+=======
+<<<<<<< Updated upstream
+||||||| constructed merge base
+        this.pivot = pivot;
+    }
+
+    public Pivot getPivot() {
+        return pivot;
+    }
+
+    public void setPivot(Pivot pivot) {
+        this.pivot = pivot;
+=======
+        this.pivot = pivot;
+    }
+
+    protected Event(Parcel in) {
+        name = in.readString();
+        type = in.readString();
+        date = in.readString();
+        duration = in.readString();
+        country = in.readString();
+        city = in.readString();
+        organizer = in.readString();
+        status = in.readString();
+    }
+
+    public static final Creator<Event> CREATOR = new Creator<Event>() {
+        @Override
+        public Event createFromParcel(Parcel in) {
+            return new Event(in);
+        }
+
+        @Override
+        public Event[] newArray(int size) {
+            return new Event[size];
+        }
+    };
+
+    public Pivot getPivot() {
+        return pivot;
+    }
+
+    public void setPivot(Pivot pivot) {
+        this.pivot = pivot;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     }
 
     public String getName() {
@@ -120,5 +172,23 @@ public class Event {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(type);
+        dest.writeString(date);
+        dest.writeString(duration);
+        dest.writeString(country);
+        dest.writeString(city);
+        dest.writeString(organizer);
+        dest.writeString(status);
     }
 }
