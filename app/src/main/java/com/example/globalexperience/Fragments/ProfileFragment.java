@@ -101,16 +101,7 @@ public class ProfileFragment extends Fragment {
         viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
         viewModel.init(helper.getAccessToken());
         Log.d("access token", helper.getAccessToken());
-
-//        if (getArguments() != null) {
-//            student = ProfileFragmentArgs.fromBundle(getArguments()).getStudent();
-//            StudentProfile(user);
-//            observeProfileViewModel(Integer.parseInt(user.getId()));
-//        }
-
         viewModel.getProfile().observe(requireActivity(), observer);
-
-
     }
 
     @OnClick(R.id.btn_logout)

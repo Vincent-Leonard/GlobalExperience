@@ -30,8 +30,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="?attr/actionModeCloseDrawable"
             app:title="PROFILE"
-            app:titleMarginStart="160dp"
+            app:titleMarginStart="120dp"
             app:titleTextAppearance="@style/AppTheme"
             app:titleTextColor="#000000" />
 
@@ -52,7 +53,7 @@
                     android:id="@+id/u_fill"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="200dp"
+                    android:layout_marginTop="170dp"
                     android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
