@@ -148,7 +148,7 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getLecturerResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getLecturerResults().getLecturer_name());
-                if(user.getStudentResults().getStudent_gender() == "1"){
+                if(user.getLecturerResults().getLecturer_gender() == "1"){
                     gender.setText("Female");
                 }else{
                     gender.setText("Male");
@@ -160,7 +160,7 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getStaffResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getStaffResults().getStaff_name());
-                if(user.getStudentResults().getStudent_gender() == "1"){
+                if(user.getStaffResults().getStaff_gender() == "1"){
                     gender.setText("Female");
                 }else{
                     gender.setText("Male");
