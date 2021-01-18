@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -27,6 +28,7 @@ import com.example.globalexperience.Fragments.ProfileViewModel;
 import com.example.globalexperience.MainActivity;
 import com.example.globalexperience.R;
 import com.example.globalexperience.model.local.Event;
+import com.example.globalexperience.model.local.History;
 import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.local.User;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
@@ -65,6 +67,7 @@ public class DetailFragment extends Fragment {
     ImageView photo;
 
     private Event event;
+    private History history;
     private DetailViewModel viewModel;
     private SharedPreferenceHelper helper;
 
@@ -94,11 +97,23 @@ public class DetailFragment extends Fragment {
 
         if (getArguments() != null) {
             event = DetailFragmentArgs.fromBundle(getArguments()).getEvent();
+            history = DetailFragmentArgs.fromBundle(getArguments()).getHistory();
 
             if (event != null) {
                 initEvent(event);
+            }else{
+                initHistory(history);
             }
         }
+
+        Toolbar toolbar = view.findViewById(R.id.d_toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavDirections action = DetailFragmentDirections.actionDetailFragmentToPendingFragment();
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
     }
 
     private void initEvent(Event event) {
@@ -115,5 +130,21 @@ public class DetailFragment extends Fragment {
         String cities = event.getCity() + ", ";
         city.setText(cities);
         organizer.setText(event.getOrganizer());
+    }
+
+    private void initHistory(History history) {
+        Glide.with(getActivity()).load(history.getFile()).into(photo);
+        name.setText(history.getName());
+        if(history.getType() == "0"){
+            type.setText("Student Exchange");
+        }else{
+            type.setText("Student Excursion");
+        }
+        date.setText(history.getDate());
+        duration.setText(history.getDuration());
+        country.setText(history.getCountry());
+        String cities = history.getCity() + ", ";
+        city.setText(cities);
+        organizer.setText(history.getOrganizer());
     }
 }

@@ -8,11 +8,13 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.globalexperience.model.local.User;
 import com.example.globalexperience.repository.EventRepository;
+import com.example.globalexperience.repository.HistoryRepository;
 import com.example.globalexperience.repository.ProfileRepository;
 
 public class DetailViewModel extends ViewModel {
 
-    private EventRepository repository;
+    private EventRepository eventRepository;
+    private HistoryRepository historyRepository;
     private static final String TAG = "DetailViewModel";
 
     public DetailViewModel() {
@@ -20,7 +22,8 @@ public class DetailViewModel extends ViewModel {
 
     public void init(String token) {
         Log.d(TAG, "init: " + token);
-        repository = EventRepository.getInstance(token);
+        eventRepository = EventRepository.getInstance(token);
+        historyRepository = HistoryRepository.getInstance(token);
     }
 
 }

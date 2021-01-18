@@ -14,46 +14,47 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.globalexperience.R;
 import com.example.globalexperience.model.local.Event;
+import com.example.globalexperience.model.local.History;
 
 import java.util.List;
 
-public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.ViewHolder> {
+public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder>{
 
     private Context context;
-    private List<Event> eventList;
+    private List<History> historyList;
 
-    public PendingAdapter(Context context) {
+    public HistoryAdapter(Context context) {
         this.context = context;
     }
 
-    public void setEventList(List<Event> eventList) {
-        this.eventList = eventList;
+    public void setHistoryList(List<History> historyList) {
+        this.historyList = historyList;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HistoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Event event = eventList.get(position);
-        holder.name.setText(event.getName());
-        holder.type.setText(event.getType());
-        holder.date.setText(event.getDate());
-        holder.status.setText(event.getStatus());
+    public void onBindViewHolder(@NonNull HistoryAdapter.ViewHolder holder, int position) {
+        History history = historyList.get(position);
+        holder.name.setText(history.getName());
+        holder.type.setText(history.getType());
+        holder.date.setText(history.getDate());
+        holder.status.setText(history.getStatus());
         holder.cardview.setOnClickListener(v -> {
-            NavDirections action = PendingFragmentDirections.actionPendingFragmentToDetailFragment(event, null);
+            NavDirections action = HistoryFragmentDirections.actionHistoryFragmentToDetailFragment(null, history);
             Navigation.findNavController(v).navigate(action);
         });
     }
 
     @Override
     public int getItemCount() {
-        return eventList.size();
+        return historyList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

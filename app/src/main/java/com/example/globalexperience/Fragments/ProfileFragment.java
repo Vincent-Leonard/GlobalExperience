@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -87,6 +88,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
+
     }
 
     @Override
@@ -102,7 +104,17 @@ public class ProfileFragment extends Fragment {
         viewModel.init(helper.getAccessToken());
         Log.d("access token", helper.getAccessToken());
         viewModel.getProfile().observe(requireActivity(), observer);
+
+        Toolbar toolbar = view.findViewById(R.id.u_toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavDirections action = ProfileFragmentDirections.actionProfileFragmentToPendingFragment();
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
     }
+
 
     @OnClick(R.id.btn_logout)
     public void logout(View view) {
