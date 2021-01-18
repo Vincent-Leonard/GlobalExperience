@@ -5,13 +5,15 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.w3c.dom.Text;
-
 public class Event implements Parcelable {
+    @SerializedName("event_id")
+    String event_id;
     @SerializedName("event")
     String name;
     @SerializedName("type")
     String type;
+    @SerializedName("is_group")
+    String is_group;
     @SerializedName("event_date")
     String date;
     @SerializedName("duration")
@@ -23,7 +25,7 @@ public class Event implements Parcelable {
     @SerializedName("organizer")
     String organizer;
     @SerializedName("file")
-    Text file;
+    String file;
     @SerializedName("status")
     String status;
     @SerializedName("pivot")
@@ -32,9 +34,11 @@ public class Event implements Parcelable {
     public Event() {
     }
 
-    public Event(String name, String type, String date, String duration, String country, String city, String organizer, Text file, String status, Pivot pivot) {
+    public Event(String event_id, String name, String type, String is_group, String date, String duration, String country, String city, String organizer, String file, String status, Pivot pivot) {
+        this.event_id = event_id;
         this.name = name;
         this.type = type;
+        this.is_group = is_group;
         this.date = date;
         this.duration = duration;
         this.country = country;
@@ -46,13 +50,16 @@ public class Event implements Parcelable {
     }
 
     protected Event(Parcel in) {
+        event_id = in.readString();
         name = in.readString();
         type = in.readString();
+        is_group = in.readString();
         date = in.readString();
         duration = in.readString();
         country = in.readString();
         city = in.readString();
         organizer = in.readString();
+        file = in.readString();
         status = in.readString();
     }
 
@@ -68,12 +75,12 @@ public class Event implements Parcelable {
         }
     };
 
-    public Pivot getPivot() {
-        return pivot;
+    public String getEvent_id() {
+        return event_id;
     }
 
-    public void setPivot(Pivot pivot) {
-        this.pivot = pivot;
+    public void setEvent_id(String event_id) {
+        this.event_id = event_id;
     }
 
     public String getName() {
@@ -90,6 +97,14 @@ public class Event implements Parcelable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getIs_group() {
+        return is_group;
+    }
+
+    public void setIs_group(String is_group) {
+        this.is_group = is_group;
     }
 
     public String getDate() {
@@ -132,11 +147,11 @@ public class Event implements Parcelable {
         this.organizer = organizer;
     }
 
-    public Text getFile() {
+    public String getFile() {
         return file;
     }
 
-    public void setFile(Text file) {
+    public void setFile(String file) {
         this.file = file;
     }
 
@@ -148,6 +163,14 @@ public class Event implements Parcelable {
         this.status = status;
     }
 
+    public Pivot getPivot() {
+        return pivot;
+    }
+
+    public void setPivot(Pivot pivot) {
+        this.pivot = pivot;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -155,13 +178,16 @@ public class Event implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(event_id);
         dest.writeString(name);
         dest.writeString(type);
+        dest.writeString(is_group);
         dest.writeString(date);
         dest.writeString(duration);
         dest.writeString(country);
         dest.writeString(city);
         dest.writeString(organizer);
+        dest.writeString(file);
         dest.writeString(status);
     }
 }
