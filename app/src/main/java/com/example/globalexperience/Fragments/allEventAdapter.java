@@ -13,48 +13,48 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.globalexperience.R;
+import com.example.globalexperience.model.local.AllEvent;
 import com.example.globalexperience.model.local.Event;
-import com.example.globalexperience.model.local.History;
 
 import java.util.List;
 
-public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder>{
+public class allEventAdapter extends RecyclerView.Adapter<allEventAdapter.ViewHolder>{
 
     private Context context;
-    private List<History> historyList;
+    private List<AllEvent> allEventList;
 
-    public HistoryAdapter(Context context) {
+    public allEventAdapter(Context context) {
         this.context = context;
     }
 
-    public void setHistoryList(List<History> historyList) {
-        this.historyList = historyList;
+    public void setAllEventList(List<AllEvent> allEventList) {
+        this.allEventList = allEventList;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public HistoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public allEventAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
-        return new ViewHolder(view);
+        return new allEventAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryAdapter.ViewHolder holder, int position) {
-        History history = historyList.get(position);
-        holder.name.setText(history.getName());
-        holder.type.setText(history.getType());
-        holder.date.setText(history.getDate());
-        holder.status.setText(history.getStatus());
+    public void onBindViewHolder(@NonNull allEventAdapter.ViewHolder holder, int position) {
+        AllEvent allEvent = allEventList.get(position);
+        holder.name.setText(allEvent.getName());
+        holder.type.setText(allEvent.getType());
+        holder.date.setText(allEvent.getDate());
+        holder.status.setText(allEvent.getStatus());
         holder.cardview.setOnClickListener(v -> {
-            HistoryFragmentDirections.ActionHistoryFragmentToDetailFragment actionHistoryFragmentToDetailFragment = HistoryFragmentDirections.actionHistoryFragmentToDetailFragment(null, history, null);
-            Navigation.findNavController(v).navigate(actionHistoryFragmentToDetailFragment);
+            NavDirections action = allEventFragmentDirections.actionAllEventFragmentToDetailFragment(null, null, allEvent);
+            Navigation.findNavController(v).navigate(action);
         });
     }
 
     @Override
     public int getItemCount() {
-        return historyList.size();
+        return allEventList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

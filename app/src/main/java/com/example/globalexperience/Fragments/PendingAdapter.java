@@ -46,7 +46,7 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.ViewHold
         holder.date.setText(event.getDate());
         holder.status.setText(event.getStatus());
         holder.cardview.setOnClickListener(v -> {
-            NavDirections action = PendingFragmentDirections.actionPendingFragmentToDetailFragment(event, null);
+            NavDirections action = PendingFragmentDirections.actionPendingFragmentToDetailFragment(event, null, null);
             Navigation.findNavController(v).navigate(action);
         });
     }

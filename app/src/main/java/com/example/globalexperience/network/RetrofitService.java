@@ -3,6 +3,7 @@ package com.example.globalexperience.network;
 import android.util.Log;
 
 import com.example.globalexperience.model.local.Student;
+import com.example.globalexperience.model.response.AllEventResponse;
 import com.example.globalexperience.model.response.EventResponse;
 import com.example.globalexperience.model.response.HistoryResponse;
 import com.example.globalexperience.model.response.LecturerResponse;
@@ -70,6 +71,10 @@ public class RetrofitService {
 
     public Call<EventResponse> getEvents() {
         return endpoints.getEvents();
+    }
+
+    public Call<AllEventResponse> getAllEvents() {
+        return endpoints.getAllEvents();
     }
 
     public Call<HistoryResponse> getHistory() {

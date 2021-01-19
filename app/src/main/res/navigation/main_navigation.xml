@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_pendingFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_pendingFragment_to_allEventFragment"
+            app:destination="@id/allEventFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
@@ -54,6 +57,9 @@
         <action
             android:id="@+id/action_historyFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_historyFragment_to_allEventFragment"
+            app:destination="@id/allEventFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -71,7 +77,15 @@
             android:id="@+id/action_detailFragment_to_historyFragment2"
             app:destination="@id/historyFragment" />
         <argument android:name="history"
-            app:argType="com.example.globalexperience.model.local.History" />
+            app:argType="com.example.globalexperience.model.local.History"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_detailFragment_to_allEventFragment"
+            app:destination="@id/allEventFragment" />
+        <argument
+            android:name="allEvent"
+            app:argType="com.example.globalexperience.model.local.AllEvent"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -84,5 +98,23 @@
         <action
             android:id="@+id/action_splashFragment_to_pendingFragment"
             app:destination="@id/pendingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allEventFragment"
+        android:name="com.example.globalexperience.Fragments.allEventFragment"
+        android:label="fragment_all_event"
+        tools:layout="@layout/fragment_all_event" >
+        <action
+            android:id="@+id/action_allEventFragment_to_pendingFragment"
+            app:destination="@id/pendingFragment" />
+        <action
+            android:id="@+id/action_allEventFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_allEventFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_allEventFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 </navigation>

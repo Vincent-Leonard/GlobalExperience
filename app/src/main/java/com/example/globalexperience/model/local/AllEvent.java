@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Event implements Parcelable {
+public class AllEvent implements Parcelable {
     @SerializedName("event_id")
     String event_id;
     @SerializedName("event")
@@ -31,10 +31,10 @@ public class Event implements Parcelable {
     @SerializedName("pivot")
     private Pivot pivot;
 
-    public Event() {
+    public AllEvent() {
     }
 
-    public Event(String event_id, String name, String type, String is_group, String date, String duration, String country, String city, String organizer, String file, String status, Pivot pivot) {
+    public AllEvent(String event_id, String name, String type, String is_group, String date, String duration, String country, String city, String organizer, String file, String status, Pivot pivot) {
         this.event_id = event_id;
         this.name = name;
         this.type = type;
@@ -49,26 +49,30 @@ public class Event implements Parcelable {
         this.pivot = pivot;
     }
 
-    protected Event(Parcel in) {
+
+    protected AllEvent(Parcel in) {
+        event_id = in.readString();
         name = in.readString();
         type = in.readString();
+        is_group = in.readString();
         date = in.readString();
         duration = in.readString();
         country = in.readString();
         city = in.readString();
         organizer = in.readString();
+        file = in.readString();
         status = in.readString();
     }
 
-    public static final Creator<Event> CREATOR = new Creator<Event>() {
+    public static final Creator<AllEvent> CREATOR = new Creator<AllEvent>() {
         @Override
-        public Event createFromParcel(Parcel in) {
-            return new Event(in);
+        public AllEvent createFromParcel(Parcel in) {
+            return new AllEvent(in);
         }
 
         @Override
-        public Event[] newArray(int size) {
-            return new Event[size];
+        public AllEvent[] newArray(int size) {
+            return new AllEvent[size];
         }
     };
 
@@ -160,30 +164,31 @@ public class Event implements Parcelable {
         this.status = status;
     }
 
+    public Pivot getPivot() {
+        return pivot;
+    }
+
+    public void setPivot(Pivot pivot) {
+        this.pivot = pivot;
+    }
+
     @Override
     public int describeContents() {
         return 0;
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-        dest.writeString(name);
-        dest.writeString(type);
-
-        dest.writeString(event_id);
-        dest.writeString(name);
-        dest.writeString(type);
-        dest.writeString(is_group);
-
-        dest.writeString(date);
-        dest.writeString(duration);
-        dest.writeString(country);
-        dest.writeString(city);
-        dest.writeString(organizer);
-
-        dest.writeString(file);
-
-        dest.writeString(status);
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(event_id);
+        parcel.writeString(name);
+        parcel.writeString(type);
+        parcel.writeString(is_group);
+        parcel.writeString(date);
+        parcel.writeString(duration);
+        parcel.writeString(country);
+        parcel.writeString(city);
+        parcel.writeString(organizer);
+        parcel.writeString(file);
+        parcel.writeString(status);
     }
 }

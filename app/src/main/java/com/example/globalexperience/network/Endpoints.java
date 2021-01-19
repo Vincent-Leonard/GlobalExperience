@@ -1,6 +1,7 @@
 package com.example.globalexperience.network;
 
 import com.example.globalexperience.model.local.Student;
+import com.example.globalexperience.model.response.AllEventResponse;
 import com.example.globalexperience.model.response.EventResponse;
 import com.example.globalexperience.model.response.HistoryResponse;
 import com.example.globalexperience.model.response.LecturerResponse;
@@ -27,6 +28,9 @@ public interface Endpoints {
 
     @GET("events")
     Call<EventResponse> getEvents();
+
+    @GET("admin")
+    Call<AllEventResponse> getAllEvents();
 
     @GET("histories")
     Call<HistoryResponse> getHistories();
