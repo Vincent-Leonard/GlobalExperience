@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.response.EventResponse;
+import com.example.globalexperience.model.response.HistoryResponse;
 import com.example.globalexperience.model.response.LecturerResponse;
 import com.example.globalexperience.model.response.ProfileResponse;
 import com.example.globalexperience.model.response.StaffResponse;
@@ -69,6 +70,10 @@ public class RetrofitService {
 
     public Call<EventResponse> getEvents() {
         return endpoints.getEvents();
+    }
+
+    public Call<HistoryResponse> getHistory() {
+        return endpoints.getHistories();
     }
 
 //    public Call<Student> getStudent() { return endpoints.getStudent(); }

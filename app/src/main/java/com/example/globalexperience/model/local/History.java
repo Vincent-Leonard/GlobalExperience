@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Event implements Parcelable {
+public class History implements Parcelable{
     @SerializedName("event_id")
     String event_id;
     @SerializedName("event")
@@ -31,10 +31,10 @@ public class Event implements Parcelable {
     @SerializedName("pivot")
     private Pivot pivot;
 
-    public Event() {
+    public History() {
     }
 
-    public Event(String event_id, String name, String type, String is_group, String date, String duration, String country, String city, String organizer, String file, String status, Pivot pivot) {
+    public History(String event_id, String name, String type, String is_group, String date, String duration, String country, String city, String organizer, String file, String status, Pivot pivot) {
         this.event_id = event_id;
         this.name = name;
         this.type = type;
@@ -46,65 +46,10 @@ public class Event implements Parcelable {
         this.organizer = organizer;
         this.file = file;
         this.status = status;
-<<<<<<< Updated upstream
         this.pivot = pivot;
     }
 
-    public Pivot getPivot() {
-        return pivot;
-    }
-
-    public void setPivot(Pivot pivot) {
-        this.pivot = pivot;
-||||||| constructed merge base
-=======
-<<<<<<< Updated upstream
-||||||| constructed merge base
-        this.pivot = pivot;
-    }
-
-    public Pivot getPivot() {
-        return pivot;
-    }
-
-    public void setPivot(Pivot pivot) {
-        this.pivot = pivot;
-=======
-        this.pivot = pivot;
-    }
-
-    protected Event(Parcel in) {
-        name = in.readString();
-        type = in.readString();
-        date = in.readString();
-        duration = in.readString();
-        country = in.readString();
-        city = in.readString();
-        organizer = in.readString();
-        status = in.readString();
-    }
-
-    public static final Creator<Event> CREATOR = new Creator<Event>() {
-        @Override
-        public Event createFromParcel(Parcel in) {
-            return new Event(in);
-        }
-
-        @Override
-        public Event[] newArray(int size) {
-            return new Event[size];
-        }
-    };
-
-    public Pivot getPivot() {
-        return pivot;
-    }
-
-    public void setPivot(Pivot pivot) {
-        this.pivot = pivot;
-    }
-
-    protected Event(Parcel in) {
+    protected History(Parcel in) {
         event_id = in.readString();
         name = in.readString();
         type = in.readString();
@@ -118,15 +63,36 @@ public class Event implements Parcelable {
         status = in.readString();
     }
 
-    public static final Creator<Event> CREATOR = new Creator<Event>() {
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(event_id);
+        dest.writeString(name);
+        dest.writeString(type);
+        dest.writeString(is_group);
+        dest.writeString(date);
+        dest.writeString(duration);
+        dest.writeString(country);
+        dest.writeString(city);
+        dest.writeString(organizer);
+        dest.writeString(file);
+        dest.writeString(status);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<History> CREATOR = new Creator<History>() {
         @Override
-        public Event createFromParcel(Parcel in) {
-            return new Event(in);
+        public History createFromParcel(Parcel in) {
+            return new History(in);
         }
 
         @Override
-        public Event[] newArray(int size) {
-            return new Event[size];
+        public History[] newArray(int size) {
+            return new History[size];
         }
     };
 
@@ -218,7 +184,6 @@ public class Event implements Parcelable {
         this.status = status;
     }
 
-
     public Pivot getPivot() {
         return pivot;
     }
@@ -227,30 +192,5 @@ public class Event implements Parcelable {
         this.pivot = pivot;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-        dest.writeString(name);
-        dest.writeString(type);
-
-        dest.writeString(event_id);
-        dest.writeString(name);
-        dest.writeString(type);
-        dest.writeString(is_group);
-
-        dest.writeString(date);
-        dest.writeString(duration);
-        dest.writeString(country);
-        dest.writeString(city);
-        dest.writeString(organizer);
-
-        dest.writeString(file);
-
-        dest.writeString(status);
-    }
 }

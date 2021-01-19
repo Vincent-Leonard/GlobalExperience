@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -87,6 +88,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
+
     }
 
     @Override
@@ -102,7 +104,17 @@ public class ProfileFragment extends Fragment {
         viewModel.init(helper.getAccessToken());
         Log.d("access token", helper.getAccessToken());
         viewModel.getProfile().observe(requireActivity(), observer);
+
+        Toolbar toolbar = view.findViewById(R.id.u_toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavDirections action = ProfileFragmentDirections.actionProfileFragmentToPendingFragment();
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
     }
+
 
     @OnClick(R.id.btn_logout)
     public void logout(View view) {
@@ -135,10 +147,10 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getStudentResults().getNim());
                 email.setText(user.getEmail());
                 name.setText(user.getStudentResults().getStudent_name());
-                if(user.getStudentResults().getStudent_gender() == "0"){
-                    gender.setText("Male");
-                }else{
+                if(user.getStudentResults().getStudent_gender() == "1"){
                     gender.setText("Female");
+                }else{
+                    gender.setText("Male");
                 }
                 major.setText(user.getStudentResults().getDepartment().getDepartmentName());
                 batch.setText(user.getStudentResults().getBatch());
@@ -148,10 +160,10 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getLecturerResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getLecturerResults().getLecturer_name());
-                if(user.getLecturerResults().getLecturer_gender() == "0"){
-                    gender.setText("Male");
-                }else{
+                if(user.getLecturerResults().getLecturer_gender() == "1"){
                     gender.setText("Female");
+                }else{
+                    gender.setText("Male");
                 }
                 major.setText(user.getLecturerResults().getDepartment().getDepartmentName());
                 phone.setText(user.getLecturerResults().getLecturer_phone());
@@ -160,17 +172,15 @@ public class ProfileFragment extends Fragment {
                 nim.setText(user.getStaffResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getStaffResults().getStaff_name());
-                if(user.getStaffResults().getStaff_gender() == "0"){
-                    gender.setText("Male");
-                }else{
+                if(user.getStaffResults().getStaff_gender() == "1"){
                     gender.setText("Female");
+                }else{
+                    gender.setText("Male");
                 }
                 major.setText(user.getStaffResults().getDepartment().getDepartmentName());
                 phone.setText(user.getStaffResults().getStaff_phone());
                 line.setText(user.getStaffResults().getStaff_line_account());
             }
-
-
         }
     };
 

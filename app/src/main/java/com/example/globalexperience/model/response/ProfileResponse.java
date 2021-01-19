@@ -11,12 +11,4 @@ public class ProfileResponse {
     public User getResults() {
         return results;
     }
-
-//    @SerializedName("student")
-//    private Student studentResults;
-//
-//    public Student getStudentResults() {
-//        return studentResults;
-//    }
-
 }

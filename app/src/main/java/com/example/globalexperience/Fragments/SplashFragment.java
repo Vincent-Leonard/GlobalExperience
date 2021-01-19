@@ -15,7 +15,6 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.example.globalexperience.R;
-import com.example.globalexperience.SplashFragmentDirections;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 
 public class SplashFragment extends Fragment {
@@ -42,21 +41,10 @@ public class SplashFragment extends Fragment {
                 //request ke api check apakah token masih jalan / tidak (kalau tidak send request lagi pakai refresh token)
                 action = SplashFragmentDirections.actionSplashFragmentToLoginFragment();
             }else{
-                action = SplashFragmentDirections.actionSplashFragmentToProfileFragment();
+                action = SplashFragmentDirections.actionSplashFragmentToPendingFragment();
             }
             Navigation.findNavController(view).navigate(action);
         }, 2000);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
-    }
 }

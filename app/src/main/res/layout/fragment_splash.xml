@@ -23,14 +23,13 @@
         android:id="@+id/s_mountain_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:alpha="0.5"
         android:contentDescription="TODO"
         android:src="@drawable/gunung_v2"
         android:theme="@style/AppTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/img_logo_fragment" />
 
     <ImageView
         android:id="@+id/img_logo_fragment"
