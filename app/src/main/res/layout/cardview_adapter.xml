@@ -11,6 +11,8 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,6 +22,16 @@
             android:layout_height="wrap_content"
             android:background="@drawable/column_white"
             android:paddingBottom="16dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_baseline_emoji_events_24"
+                app:layout_constraintBottom_toBottomOf="@+id/c_photo"
+                app:layout_constraintEnd_toEndOf="@+id/c_photo"
+                app:layout_constraintStart_toStartOf="@+id/c_photo"
+                app:layout_constraintTop_toTopOf="@+id/c_photo" />
 
             <ImageView
                 android:id="@+id/c_photo"
