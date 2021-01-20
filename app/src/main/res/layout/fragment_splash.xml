@@ -11,8 +11,7 @@
         android:id="@+id/s_background_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha="0.2"
-        android:background="@drawable/gradient11"
+        android:background="@drawable/newbg"
         android:theme="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,29 +19,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/s_mountain_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:alpha="0.5"
-        android:contentDescription="TODO"
-        android:src="@drawable/bg11"
-        android:theme="@style/AppTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/s_background_fragment" />
-
-    <ImageView
         android:id="@+id/img_logo_fragment"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="170dp"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="190dp"
         android:theme="@style/AppTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_globex" />
+        app:srcCompat="@drawable/new_logo" />
 
     <TextView
         android:id="@+id/text_logo_fragment"

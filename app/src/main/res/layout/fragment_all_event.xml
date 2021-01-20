@@ -10,24 +10,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/p_mountain_event"
-            android:layout_width="442dp"
-            android:layout_height="769dp"
-            android:src="@drawable/bg11"
+        <View
+            android:id="@+id/a_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/newbg2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/e_title"
+            android:id="@+id/a_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:text="List Event"
+            android:text="EVENTS"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -46,20 +45,18 @@
             android:id="@+id/rv_event"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/e_title"
+            app:layout_constraintTop_toBottomOf="@+id/a_title"
             tools:listitem="@layout/item">
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <ProgressBar
             android:id="@+id/progressBar_event"
-            style="?android:attr/progressBarStyle"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

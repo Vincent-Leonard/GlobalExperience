@@ -190,13 +190,13 @@
         android:textAllCaps="false"
         android:textSize="14sp"
         android:theme="@style/AppTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/black_white_view"
-        app:layout_constraintEnd_toEndOf="@+id/black_white_view"
-        app:layout_constraintStart_toStartOf="@+id/black_white_view"
-        app:layout_constraintTop_toTopOf="@+id/black_white_view" />
+        app:layout_constraintBottom_toBottomOf="@+id/white3"
+        app:layout_constraintEnd_toEndOf="@+id/white3"
+        app:layout_constraintStart_toStartOf="@+id/white3"
+        app:layout_constraintTop_toTopOf="@+id/white3" />
 
     <View
-        android:id="@+id/black_white_view"
+        android:id="@+id/white3"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="60dp"
@@ -214,9 +214,9 @@
         android:text="Log In"
         android:textColor="#FFFFFF"
         android:translationZ="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/black_white_view"
-        app:layout_constraintEnd_toEndOf="@+id/black_white_view"
-        app:layout_constraintStart_toStartOf="@+id/black_white_view"
+        app:layout_constraintBottom_toBottomOf="@+id/white3"
+        app:layout_constraintEnd_toEndOf="@+id/white3"
+        app:layout_constraintStart_toStartOf="@+id/white3"
         app:layout_constraintTop_toTopOf="@+id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

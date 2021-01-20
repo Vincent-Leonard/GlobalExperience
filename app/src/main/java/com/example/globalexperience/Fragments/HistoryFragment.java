@@ -34,6 +34,9 @@ public class HistoryFragment extends Fragment {
     @BindView(R.id.imgbtn_profile)
     ImageView imageView;
 
+    @BindView(R.id.progressBar2)
+    ProgressBar loading;
+
     @BindView(R.id.rv_history)
     RecyclerView rvEvent;
 
@@ -54,6 +57,7 @@ public class HistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+        showLoading(true);
 
         //TODO: Place viewModel implementation here
         helper = SharedPreferenceHelper.getInstance(requireActivity());
@@ -80,8 +84,18 @@ public class HistoryFragment extends Fragment {
                 adapter.setHistoryList(histories);
                 adapter.notifyDataSetChanged();
                 rvEvent.setAdapter(adapter);
-                //showLoading(false);
+                showLoading(false);
             }
         }
     };
+
+    private void showLoading(Boolean state) {
+        if (state) {
+            rvEvent.setVisibility(View.GONE);
+            loading.setVisibility(View.VISIBLE);
+        } else {
+            rvEvent.setVisibility(View.VISIBLE);
+            loading.setVisibility(View.GONE);
+        }
+    }
 }

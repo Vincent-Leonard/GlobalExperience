@@ -7,8 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bg">#DEC189</color>
-    <color name="detail">#E18745</color>
-    <color name="floataction">#F5ECDB</color>
+    <color name="profile">#E8E7F5</color>
+    <color name="detail">#F2F1F7</color>
+    <color name="floataction">#FA394F</color>
     <color name="login">#B1A291</color>
+    <color name="navbar">#8090A5</color>
+    <color name="bg">#DCDCF4</color>
 </resources>

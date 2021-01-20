@@ -64,6 +64,12 @@ public class DetailFragment extends Fragment {
     @BindView(R.id.event_host)
     TextView organizer;
 
+    @BindView(R.id.event_status)
+    TextView status;
+
+    @BindView(R.id.event_category)
+    TextView category;
+
     @BindView(R.id.event_photo)
     ImageView photo;
 
@@ -135,6 +141,29 @@ public class DetailFragment extends Fragment {
         String cities = event.getCity() + ", ";
         city.setText(cities);
         organizer.setText(event.getOrganizer());
+        if(event.getStatus() == "0"){
+            status.setText("Pending");
+        }
+        if(event.getStatus() == "1"){
+            status.setText("Approved");
+        }
+        if(event.getStatus() == "2"){
+            status.setText("Rejected");
+        }
+        if(event.getStatus() == "3"){
+            status.setText("Revision");
+        }
+        if(event.getStatus() == "4"){
+            status.setText("Open");
+        }
+        if(event.getStatus() == "5"){
+            status.setText("Close");
+        }
+        if(event.getIs_group() == "0"){
+            category.setText("Individual");
+        }else{
+            category.setText("Group");
+        }
     }
 
     private void initHistory(History history) {
@@ -151,6 +180,26 @@ public class DetailFragment extends Fragment {
         String cities = history.getCity() + ", ";
         city.setText(cities);
         organizer.setText(history.getOrganizer());
+        if(history.getStatus() == "0"){
+            status.setText("Pending");
+        }
+        if(history.getStatus() == "1"){
+            status.setText("Approved");
+        }
+        if(history.getStatus() == "2"){
+            status.setText("Rejected");
+        }
+        if(history.getStatus() == "3"){
+            status.setText("Revision");
+        }
+        else{
+            status.setText("Open");
+        }
+        if(history.getIs_group() == "0"){
+            category.setText("Individual");
+        }else{
+            category.setText("Group");
+        }
     }
 
     private void initAllEvent(AllEvent allEvent) {
@@ -167,5 +216,28 @@ public class DetailFragment extends Fragment {
         String cities = allEvent.getCity() + ", ";
         city.setText(cities);
         organizer.setText(allEvent.getOrganizer());
+        if(allEvent.getStatus() == "0"){
+            status.setText("Pending");
+        }
+        if(allEvent.getStatus() == "1"){
+            status.setText("Approved");
+        }
+        if(allEvent.getStatus() == "2"){
+            status.setText("Rejected");
+        }
+        if(allEvent.getStatus() == "3"){
+            status.setText("Revision");
+        }
+        if(allEvent.getStatus() == "4"){
+            status.setText("Open");
+        }
+        if(allEvent.getStatus() == "5"){
+            status.setText("Close");
+        }
+        if(allEvent.getIs_group() == "0"){
+            category.setText("Individual");
+        }else{
+            category.setText("Group");
+        }
     }
 }

@@ -15,13 +15,4 @@
         <item name="colorAccent">@color/login</item>
 
     </style>
-<!--    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">-->
-<!--        <item name="android:textSize">24sp</item>-->
-<!--    </style>-->
-<!--    <style name="Button.White" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">-->
-<!--        <item name="colorPrimary">@color/white</item>-->
-<!--    </style>-->
-<!--    <style name="Button.Login" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">-->
-<!--        <item name="colorPrimary">@color/login</item>-->
-<!--    </style>-->
 </resources>
