@@ -35,16 +35,13 @@
         android:id="@+id/pendingFragment"
         android:name="com.example.globalexperience.Fragments.PendingFragment"
         android:label="fragment_pending"
-        tools:layout="@layout/fragment_pending" >
+        tools:layout="@layout/fragment_pending">
         <action
             android:id="@+id/action_pendingFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_pendingFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
-        <action
-            android:id="@+id/action_pendingFragment_to_allEventFragment"
-            app:destination="@id/allEventFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
@@ -57,9 +54,6 @@
         <action
             android:id="@+id/action_historyFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
-        <action
-            android:id="@+id/action_historyFragment_to_allEventFragment"
-            app:destination="@id/allEventFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -104,12 +98,6 @@
         android:name="com.example.globalexperience.Fragments.allEventFragment"
         android:label="fragment_all_event"
         tools:layout="@layout/fragment_all_event" >
-        <action
-            android:id="@+id/action_allEventFragment_to_pendingFragment"
-            app:destination="@id/pendingFragment" />
-        <action
-            android:id="@+id/action_allEventFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
         <action
             android:id="@+id/action_allEventFragment_to_detailFragment"
             app:destination="@id/detailFragment" />

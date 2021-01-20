@@ -32,11 +32,11 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment;
                 switch (item.getItemId()) {
-                    case R.id.nav_pending:
+                    case R.id.pendingFragment:
                         fragment = new PendingFragment();
                         loadFragment(fragment);
                         return true;
-                    case R.id.nav_history:
+                    case R.id.historyFragment:
                         fragment = new HistoryFragment();
                         loadFragment(fragment);
                         return true;
@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        bottomNavigationView.setSelectedItemId(R.id.nav_pending);
+        bottomNavigationView.setSelectedItemId(R.id.pendingFragment);
         Fragment fragment = new PendingFragment();
         loadFragment(fragment);
     }

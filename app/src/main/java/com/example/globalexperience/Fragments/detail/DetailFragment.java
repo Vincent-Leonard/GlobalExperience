@@ -27,6 +27,7 @@ import com.example.globalexperience.Fragments.ProfileFragmentDirections;
 import com.example.globalexperience.Fragments.ProfileViewModel;
 import com.example.globalexperience.MainActivity;
 import com.example.globalexperience.R;
+import com.example.globalexperience.model.local.AllEvent;
 import com.example.globalexperience.model.local.Event;
 import com.example.globalexperience.model.local.History;
 import com.example.globalexperience.model.local.Student;
@@ -68,6 +69,7 @@ public class DetailFragment extends Fragment {
 
     private Event event;
     private History history;
+    private AllEvent allEvent;
     private DetailViewModel viewModel;
     private SharedPreferenceHelper helper;
 
@@ -98,11 +100,14 @@ public class DetailFragment extends Fragment {
         if (getArguments() != null) {
             event = DetailFragmentArgs.fromBundle(getArguments()).getEvent();
             history = DetailFragmentArgs.fromBundle(getArguments()).getHistory();
+            allEvent = DetailFragmentArgs.fromBundle(getArguments()).getAllEvent();
 
             if (event != null) {
                 initEvent(event);
-            }else{
+            }else if (history != null) {
                 initHistory(history);
+            }else{
+                initAllEvent(allEvent);
             }
         }
 
@@ -146,5 +151,21 @@ public class DetailFragment extends Fragment {
         String cities = history.getCity() + ", ";
         city.setText(cities);
         organizer.setText(history.getOrganizer());
+    }
+
+    private void initAllEvent(AllEvent allEvent) {
+        Glide.with(getActivity()).load(allEvent.getFile()).into(photo);
+        name.setText(allEvent.getName());
+        if(allEvent.getType() == "0"){
+            type.setText("Student Exchange");
+        }else{
+            type.setText("Student Excursion");
+        }
+        date.setText(allEvent.getDate());
+        duration.setText(allEvent.getDuration());
+        country.setText(allEvent.getCountry());
+        String cities = allEvent.getCity() + ", ";
+        city.setText(cities);
+        organizer.setText(allEvent.getOrganizer());
     }
 }

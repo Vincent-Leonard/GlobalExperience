@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_pending"
+        android:id="@+id/pendingFragment"
         android:icon="@drawable/baseline_pending_actions_black_18dp"
         android:title="Pending" />
 
     <item
-        android:id="@+id/placeholder"
-        android:title="" />
+        android:id="@+id/allEventFragment"
+        android:title="All Event" />
 
     <item
-        android:id="@+id/nav_history"
+        android:id="@+id/historyFragment"
         android:icon="@drawable/baseline_history_black_18dp"
         android:title="History" />
 </menu>
