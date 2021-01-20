@@ -12,10 +12,9 @@
 
         <ImageView
             android:id="@+id/p_mountain_event"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
-            android:src="@drawable/gunung_v2"
+            android:layout_width="442dp"
+            android:layout_height="769dp"
+            android:src="@drawable/bg11"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

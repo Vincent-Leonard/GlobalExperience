@@ -10,7 +10,7 @@
         android:id="@+id/u_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/gradient"
+        android:background="@drawable/gradient11"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,11 +48,13 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="150dp"
-                android:background="@color/white"
+                android:background="#EAE0F6"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardouter"
