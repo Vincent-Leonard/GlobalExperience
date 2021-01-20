@@ -50,17 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 bottomNavigationView.setVisibility(View.VISIBLE);
                 floatingActionButton.setVisibility(View.VISIBLE);
             }else{
-                bottomNavigationView.setVisibility(View.VISIBLE);
-                floatingActionButton.setVisibility(View.VISIBLE);
+                bottomNavigationView.setVisibility(View.GONE);
+                floatingActionButton.setVisibility(View.GONE);
             }
         });
-
-        NavigationUI.setupActionBarWithNavController(this, navController, configuration);
-        NavigationUI.setupWithNavController(bottomNavigationView, navController);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        return NavigationUI.navigateUp(navController, (Openable) null);
     }
 }

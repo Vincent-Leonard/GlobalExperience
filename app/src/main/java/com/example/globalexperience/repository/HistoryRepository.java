@@ -17,6 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HistoryRepository {
+
     private static HistoryRepository historyRepository;
     private RetrofitService apiService;
     private static final String TAG = "HistoryRepository";
