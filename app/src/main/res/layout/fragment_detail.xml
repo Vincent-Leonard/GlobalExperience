@@ -92,6 +92,28 @@
                             app:layout_constraintTop_toTopOf="parent"
                             tools:src="@drawable/hongkong" />
 
+                        <View
+                            android:id="@+id/status_back"
+                            android:layout_width="120dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/navbar"
+                            android:elevation="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/event_photo" />
+
+                        <TextView
+                            android:id="@+id/event_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:text="Status"
+                            android:textColor="#FFFFFF"
+                            app:layout_constraintBottom_toBottomOf="@+id/status_back"
+                            app:layout_constraintEnd_toEndOf="@+id/status_back"
+                            app:layout_constraintStart_toStartOf="@+id/status_back"
+                            app:layout_constraintTop_toTopOf="@+id/status_back" />
+
                         <TextView
                             android:id="@+id/event_name"
                             android:layout_width="wrap_content"
@@ -198,19 +220,6 @@
                             app:layout_constraintTop_toBottomOf="@+id/event_country" />
 
                         <TextView
-                            android:id="@+id/event_status"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="20dp"
-                            android:elevation="5dp"
-                            android:text="Status"
-                            android:textSize="18sp"
-                            android:textStyle="normal"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/event_host" />
-
-                        <TextView
                             android:id="@+id/event_category"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -221,7 +230,7 @@
                             android:textSize="18sp"
                             android:textStyle="normal"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/event_status" />
+                            app:layout_constraintTop_toBottomOf="@+id/event_host" />
 
                         <TextView
                             android:id="@+id/text_date"
@@ -276,19 +285,6 @@
                             app:layout_constraintTop_toBottomOf="@+id/text_location" />
 
                         <TextView
-                            android:id="@+id/text_status"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="16dp"
-                            android:elevation="5dp"
-                            android:text="Status"
-                            android:textSize="18sp"
-                            android:textStyle="normal"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/text_host" />
-
-                        <TextView
                             android:id="@+id/text_category"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -299,7 +295,7 @@
                             android:textSize="18sp"
                             android:textStyle="normal"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/text_status" />
+                            app:layout_constraintTop_toBottomOf="@+id/text_host" />
 
                         <View
                             android:id="@+id/black_btn_approve"
