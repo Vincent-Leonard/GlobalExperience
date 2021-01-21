@@ -102,4 +102,24 @@ public class RetrofitService {
     public Call<JsonObject> logout() {
         return endpoints.logout();
     }
+
+    public Call<Void> statusApprove(String id){
+        return endpoints.statusApprove(id);
+    }
+
+    public Call<Void> statusReject(String id){
+        return endpoints.statusReject(id);
+    }
+
+    public Call<Void> statusRevise(String id){
+        return endpoints.statusRevise(id);
+    }
+    public Call<Void> statusOpen(String id){
+        return endpoints.statusOpen(id);
+    }
+
+    public Call<Void> statusClose(String id){
+        return endpoints.statusClose(id);
+    }
+
 }

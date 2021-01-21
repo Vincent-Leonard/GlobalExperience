@@ -25,6 +25,7 @@ import androidx.navigation.Navigation;
 import com.bumptech.glide.Glide;
 import com.example.globalexperience.Fragments.ProfileFragmentDirections;
 import com.example.globalexperience.Fragments.ProfileViewModel;
+import com.example.globalexperience.Fragments.allEventFragmentDirections;
 import com.example.globalexperience.MainActivity;
 import com.example.globalexperience.R;
 import com.example.globalexperience.model.local.AllEvent;
@@ -32,6 +33,7 @@ import com.example.globalexperience.model.local.Event;
 import com.example.globalexperience.model.local.History;
 import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.local.User;
+import com.example.globalexperience.repository.AllEventRepository;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 
 import java.io.File;
@@ -73,6 +75,9 @@ public class DetailFragment extends Fragment {
     @BindView(R.id.event_photo)
     ImageView photo;
 
+    @BindView(R.id.button_approve)
+    Button buttonApprove;
+
     private Event event;
     private History history;
     private AllEvent allEvent;
@@ -102,6 +107,8 @@ public class DetailFragment extends Fragment {
         helper = SharedPreferenceHelper.getInstance(requireActivity());
         viewModel = ViewModelProviders.of(requireActivity()).get(DetailViewModel.class);
         viewModel.init(helper.getAccessToken());
+
+        buttonApprove.setVisibility(View.GONE);
 
         if (getArguments() != null) {
             event = DetailFragmentArgs.fromBundle(getArguments()).getEvent();
@@ -242,5 +249,17 @@ public class DetailFragment extends Fragment {
         }else{
             category.setText("Group");
         }
+
+        buttonApprove.setVisibility(View.VISIBLE);
+        buttonApprove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllEventRepository allEventRepository = AllEventRepository.getInstance(helper.getAccessToken());
+                allEventRepository.statusApprove(allEvent.getEvent_id());
+
+                NavDirections action = DetailFragmentDirections.actionDetailFragmentToAllEventFragment();
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
     }
 }

@@ -16,6 +16,8 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 public interface Endpoints {
 
@@ -46,4 +48,19 @@ public interface Endpoints {
 
     @POST("logout")
     Call<JsonObject> logout();
+
+    @PUT("admin/approve/{id}")
+    Call<Void> statusApprove(@Path("id") String id);
+
+    @PUT("admin/reject/{id}")
+    Call<Void> statusReject(@Path("id") String id);
+
+    @PUT("admin/revise/{id}")
+    Call<Void> statusRevise(@Path("id") String id);
+
+    @PUT("admin/open/{id}")
+    Call<Void> statusOpen(@Path("id") String id);
+
+    @PUT("admin/close/{id}")
+    Call<Void> statusClose(@Path("id") String id);
 }

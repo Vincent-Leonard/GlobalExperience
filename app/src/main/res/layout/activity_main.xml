@@ -47,4 +47,14 @@
         app:layout_constraintTop_toTopOf="@+id/bottom_nav_menu"
         app:maxImageSize="35dp"
         app:srcCompat="@drawable/baseline_add_black_18dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nva_menu_user"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/navbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu_user" />
 </androidx.constraintlayout.widget.ConstraintLayout>
