@@ -130,7 +130,7 @@ public class DetailFragment extends Fragment {
     private void initEvent(Event event) {
         Glide.with(getActivity()).load(event.getFile()).into(photo);
         name.setText(event.getName());
-        if(event.getType() == "0"){
+        if(event.getType().equals("0")){
             type.setText("Student Exchange");
         }else{
             type.setText("Student Excursion");
@@ -141,25 +141,25 @@ public class DetailFragment extends Fragment {
         String cities = event.getCity() + ", ";
         city.setText(cities);
         organizer.setText(event.getOrganizer());
-        if(event.getStatus() == "0"){
+        if(event.getStatus().equals("0")){
             status.setText("Pending");
         }
-        if(event.getStatus() == "1"){
+        if(event.getStatus().equals("1")){
             status.setText("Approved");
         }
-        if(event.getStatus() == "2"){
+        if(event.getStatus().equals("2")){
             status.setText("Rejected");
         }
-        if(event.getStatus() == "3"){
+        if(event.getStatus().equals("3")){
             status.setText("Revision");
         }
-        if(event.getStatus() == "4"){
+        if(event.getStatus().equals("4")){
             status.setText("Open");
         }
-        if(event.getStatus() == "5"){
+        if(event.getStatus().equals("5")){
             status.setText("Close");
         }
-        if(event.getIs_group() == "0"){
+        if(event.getIs_group().equals("0")){
             category.setText("Individual");
         }else{
             category.setText("Group");
@@ -169,7 +169,7 @@ public class DetailFragment extends Fragment {
     private void initHistory(History history) {
         Glide.with(getActivity()).load(history.getFile()).into(photo);
         name.setText(history.getName());
-        if(history.getType() == "0"){
+        if(history.getType().equals("0")){
             type.setText("Student Exchange");
         }else{
             type.setText("Student Excursion");
@@ -180,22 +180,25 @@ public class DetailFragment extends Fragment {
         String cities = history.getCity() + ", ";
         city.setText(cities);
         organizer.setText(history.getOrganizer());
-        if(history.getStatus() == "0"){
+        if(history.getStatus().equals("0")){
             status.setText("Pending");
         }
-        if(history.getStatus() == "1"){
+        if(history.getStatus().equals("1")){
             status.setText("Approved");
         }
-        if(history.getStatus() == "2"){
+        if(history.getStatus().equals("2")){
             status.setText("Rejected");
         }
-        if(history.getStatus() == "3"){
+        if(history.getStatus().equals("3")){
             status.setText("Revision");
         }
-        else{
+        if(history.getStatus().equals("4")){
             status.setText("Open");
         }
-        if(history.getIs_group() == "0"){
+        if(history.getStatus().equals("5")){
+            status.setText("Close");
+        }
+        if(history.getIs_group().equals("0")){
             category.setText("Individual");
         }else{
             category.setText("Group");
@@ -205,7 +208,7 @@ public class DetailFragment extends Fragment {
     private void initAllEvent(AllEvent allEvent) {
         Glide.with(getActivity()).load(allEvent.getFile()).into(photo);
         name.setText(allEvent.getName());
-        if(allEvent.getType() == "0"){
+        if(allEvent.getType().equals("0")){
             type.setText("Student Exchange");
         }else{
             type.setText("Student Excursion");
@@ -216,25 +219,25 @@ public class DetailFragment extends Fragment {
         String cities = allEvent.getCity() + ", ";
         city.setText(cities);
         organizer.setText(allEvent.getOrganizer());
-        if(allEvent.getStatus() == "0"){
+        if(allEvent.getStatus().equals("0")){
             status.setText("Pending");
         }
-        if(allEvent.getStatus() == "1"){
+        if(allEvent.getStatus().equals("1")){
             status.setText("Approved");
         }
-        if(allEvent.getStatus() == "2"){
+        if(allEvent.getStatus().equals("2")){
             status.setText("Rejected");
         }
-        if(allEvent.getStatus() == "3"){
+        if(allEvent.getStatus().equals("3")){
             status.setText("Revision");
         }
-        if(allEvent.getStatus() == "4"){
+        if(allEvent.getStatus().equals("4")){
             status.setText("Open");
         }
-        if(allEvent.getStatus() == "5"){
+        if(allEvent.getStatus().equals("5")){
             status.setText("Close");
         }
-        if(allEvent.getIs_group() == "0"){
+        if(allEvent.getIs_group().equals("0")){
             category.setText("Individual");
         }else{
             category.setText("Group");

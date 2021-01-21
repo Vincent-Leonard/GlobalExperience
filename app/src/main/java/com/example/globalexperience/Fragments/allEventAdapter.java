@@ -59,7 +59,7 @@ public class allEventAdapter extends RecyclerView.Adapter<allEventAdapter.ViewHo
             holder.status.setText("Revision");
         }else if (allEvent.getStatus().equals("4")){
             holder.status.setText("Open");
-        }else {
+        }else if (allEvent.getStatus().equals("5")){
             holder.status.setText("Close");
         }
         holder.cardview.setOnClickListener(v -> {
