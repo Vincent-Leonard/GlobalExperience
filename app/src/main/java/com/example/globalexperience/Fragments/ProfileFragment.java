@@ -150,9 +150,8 @@ public class ProfileFragment extends Fragment {
 //                    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
 //                    photo.setImageBitmap(myBitmap);
 //                }
-                if(!user.getStudentResults().getStudent_photo().equals(Constants.BASE_URL_IMAGE_URL_PROFILE+"null")){
-                    Glide.with(getActivity()).load("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo()).centerCrop().into(photo);
-                }
+
+                Glide.with(getActivity()).load(user.getStudentResults().getStudent_photo()).centerCrop().into(photo);
                 nim.setText(user.getStudentResults().getNim());
                 email.setText(user.getEmail());
                 name.setText(user.getStudentResults().getStudent_name());
