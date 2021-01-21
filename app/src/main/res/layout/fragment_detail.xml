@@ -225,10 +225,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="32dp"
                             android:elevation="5dp"
                             android:text="Category"
                             android:textSize="18sp"
                             android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/event_host" />
 
@@ -290,111 +292,108 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="16dp"
+                            android:layout_marginBottom="32dp"
                             android:elevation="5dp"
                             android:text="Category"
                             android:textSize="18sp"
                             android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/text_host" />
 
 
-                        <Button
-                            android:id="@+id/btn_approve"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/button_enabled"
-                            android:elevation="5dp"
-                            android:text="Open"
-                            android:textAllCaps="false"
-                            android:textColor="#B4000000"
-                            android:textColorHint="#000000"
-                            android:textSize="18sp"
-                            android:theme="@style/AppTheme"
-                            android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/text_category" />
-
-                        <Button
-                            android:id="@+id/btn_open"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/button_enabled"
-                            android:elevation="10dp"
-                            android:text="Open"
-                            android:textAllCaps="false"
-                            android:textColor="#B4000000"
-                            android:textColorHint="#000000"
-                            android:textSize="18sp"
-                            android:theme="@style/AppTheme"
-                            android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/text_category" />
-
-
-                        <Button
-                            android:id="@+id/btn_reject"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:background="@drawable/button_enabled"
-                            android:elevation="5dp"
-                            android:text="Reject"
-                            android:textAllCaps="false"
-                            android:textColor="#B4000000"
-                            android:textColorHint="#000000"
-                            android:textSize="18sp"
-                            android:theme="@style/AppTheme"
-                            android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/btn_revision"
-                            app:layout_constraintStart_toEndOf="@+id/btn_approve"
-                            app:layout_constraintTop_toBottomOf="@+id/text_category" />
-
-                        <Button
-                            android:id="@+id/btn_revision"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginEnd="20dp"
-                            android:layout_marginBottom="24dp"
-                            android:background="@drawable/button_enabled"
-                            android:elevation="5dp"
-                            android:text="Revision"
-                            android:textAllCaps="false"
-                            android:textColor="#B4000000"
-                            android:textColorHint="#000000"
-                            android:textSize="18sp"
-                            android:theme="@style/AppTheme"
-                            android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/event_category" />
-
-                        <Button
-                            android:id="@+id/btn_close"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginEnd="20dp"
-                            android:layout_marginBottom="24dp"
-                            android:background="@drawable/button_enabled"
-                            android:elevation="5dp"
-                            android:text="Close"
-                            android:textAllCaps="false"
-                            android:textColor="#B4000000"
-                            android:textColorHint="#000000"
-                            android:textSize="18sp"
-                            android:theme="@style/AppTheme"
-                            android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/event_category" />
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btn_open"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/button_enabled"
+                    android:elevation="10dp"
+                    android:text="Open"
+                    android:textAllCaps="false"
+                    android:textColor="#B4000000"
+                    android:textColorHint="#000000"
+                    android:textSize="18sp"
+                    android:theme="@style/AppTheme"
+                    android:translationZ="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardinner" />
+
+                <Button
+                    android:id="@+id/btn_close"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/button_enabled"
+                    android:elevation="5dp"
+                    android:text="Close"
+                    android:textAllCaps="false"
+                    android:textColor="#B4000000"
+                    android:textColorHint="#000000"
+                    android:textSize="18sp"
+                    android:theme="@style/AppTheme"
+                    android:translationZ="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardinner" />
+
+                <Button
+                    android:id="@+id/btn_approve"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/button_enabled"
+                    android:elevation="5dp"
+                    android:text="Open"
+                    android:textAllCaps="false"
+                    android:textColor="#B4000000"
+                    android:textColorHint="#000000"
+                    android:textSize="18sp"
+                    android:theme="@style/AppTheme"
+                    android:translationZ="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardinner" />
+
+                <Button
+                    android:id="@+id/btn_reject"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/button_enabled"
+                    android:elevation="5dp"
+                    android:text="Reject"
+                    android:textAllCaps="false"
+                    android:textColor="#B4000000"
+                    android:textColorHint="#000000"
+                    android:textSize="18sp"
+                    android:theme="@style/AppTheme"
+                    android:translationZ="5dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_revision"
+                    app:layout_constraintStart_toEndOf="@+id/btn_approve"
+                    app:layout_constraintTop_toBottomOf="@+id/cardinner" />
+
+                <Button
+                    android:id="@+id/btn_revision"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/button_enabled"
+                    android:elevation="5dp"
+                    android:text="Revision"
+                    android:textAllCaps="false"
+                    android:textColor="#B4000000"
+                    android:textColorHint="#000000"
+                    android:textSize="18sp"
+                    android:theme="@style/AppTheme"
+                    android:translationZ="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardinner" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
