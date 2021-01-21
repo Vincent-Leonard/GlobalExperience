@@ -75,8 +75,21 @@ public class DetailFragment extends Fragment {
     @BindView(R.id.event_photo)
     ImageView photo;
 
-    @BindView(R.id.button_approve)
+    @BindView(R.id.btn_approve)
     Button buttonApprove;
+
+    @BindView(R.id.btn_reject)
+    Button buttonReject;
+
+    @BindView(R.id.btn_revision)
+    Button buttonRevision;
+
+    @BindView(R.id.btn_open)
+    Button buttonOpen;
+
+    @BindView(R.id.btn_close)
+    Button buttonClose;
+
 
     private Event event;
     private History history;
@@ -108,8 +121,6 @@ public class DetailFragment extends Fragment {
         viewModel = ViewModelProviders.of(requireActivity()).get(DetailViewModel.class);
         viewModel.init(helper.getAccessToken());
 
-        buttonApprove.setVisibility(View.GONE);
-
         if (getArguments() != null) {
             event = DetailFragmentArgs.fromBundle(getArguments()).getEvent();
             history = DetailFragmentArgs.fromBundle(getArguments()).getHistory();
@@ -135,6 +146,12 @@ public class DetailFragment extends Fragment {
     }
 
     private void initEvent(Event event) {
+        buttonApprove.setVisibility(View.GONE);
+        buttonReject.setVisibility(View.GONE);
+        buttonRevision.setVisibility(View.GONE);
+        buttonOpen.setVisibility(View.GONE);
+        buttonClose.setVisibility(View.GONE);
+
         Glide.with(getActivity()).load(event.getFile()).into(photo);
         name.setText(event.getName());
         if(event.getType().equals("0")){
@@ -174,6 +191,12 @@ public class DetailFragment extends Fragment {
     }
 
     private void initHistory(History history) {
+        buttonApprove.setVisibility(View.GONE);
+        buttonReject.setVisibility(View.GONE);
+        buttonRevision.setVisibility(View.GONE);
+        buttonOpen.setVisibility(View.GONE);
+        buttonClose.setVisibility(View.GONE);
+
         Glide.with(getActivity()).load(history.getFile()).into(photo);
         name.setText(history.getName());
         if(history.getType().equals("0")){
@@ -250,16 +273,76 @@ public class DetailFragment extends Fragment {
             category.setText("Group");
         }
 
-        buttonApprove.setVisibility(View.VISIBLE);
-        buttonApprove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AllEventRepository allEventRepository = AllEventRepository.getInstance(helper.getAccessToken());
-                allEventRepository.statusApprove(allEvent.getEvent_id());
+        if (allEvent.getIs_group().equals("0")){
+            if (allEvent.getStatus().equals("0")){
+                buttonOpen.setVisibility(View.GONE);
+                buttonClose.setVisibility(View.GONE);
 
-                NavDirections action = DetailFragmentDirections.actionDetailFragmentToAllEventFragment();
-                Navigation.findNavController(view).navigate(action);
+                buttonApprove.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AllEventRepository allEventRepository = AllEventRepository.getInstance(helper.getAccessToken());
+                        allEventRepository.statusApprove(allEvent.getEvent_id());
+
+                        NavDirections action = DetailFragmentDirections.actionDetailFragmentToAllEventFragment();
+                        Navigation.findNavController(view).navigate(action);
+                    }
+                });
+
+                buttonReject.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AllEventRepository allEventRepository = AllEventRepository.getInstance(helper.getAccessToken());
+                        allEventRepository.statusReject(allEvent.getEvent_id());
+
+                        NavDirections action = DetailFragmentDirections.actionDetailFragmentToAllEventFragment();
+                        Navigation.findNavController(view).navigate(action);
+                    }
+                });
+
+                buttonRevision.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AllEventRepository allEventRepository = AllEventRepository.getInstance(helper.getAccessToken());
+                        allEventRepository.statusRevise(allEvent.getEvent_id());
+
+                        NavDirections action = DetailFragmentDirections.actionDetailFragmentToAllEventFragment();
+                        Navigation.findNavController(view).navigate(action);
+                    }
+                });
+            } else{
+                buttonApprove.setVisibility(View.GONE);
+                buttonReject.setVisibility(View.GONE);
+                buttonRevision.setVisibility(View.GONE);
+                buttonOpen.setVisibility(View.GONE);
+                buttonClose.setVisibility(View.GONE);
             }
-        });
+        }else if (allEvent.getIs_group().equals("1")){
+            buttonApprove.setVisibility(View.GONE);
+            buttonReject.setVisibility(View.GONE);
+            buttonRevision.setVisibility(View.GONE);
+
+            buttonOpen.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AllEventRepository allEventRepository = AllEventRepository.getInstance(helper.getAccessToken());
+                    allEventRepository.statusOpen(allEvent.getEvent_id());
+
+                    NavDirections action = DetailFragmentDirections.actionDetailFragmentToAllEventFragment();
+                    Navigation.findNavController(view).navigate(action);
+                }
+            });
+
+            buttonClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AllEventRepository allEventRepository = AllEventRepository.getInstance(helper.getAccessToken());
+                    allEventRepository.statusClose(allEvent.getEvent_id());
+
+                    NavDirections action = DetailFragmentDirections.actionDetailFragmentToAllEventFragment();
+                    Navigation.findNavController(view).navigate(action);
+                }
+            });
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.globalexperience.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.globalexperience.MainActivity;
 import com.example.globalexperience.R;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 
@@ -69,6 +71,7 @@ public class LoginFragment extends Fragment {
                                 helper.saveAccessToken(tokenResponse.getAuthorization());
                                 NavDirections actions = LoginFragmentDirections.actionLoginFragmentToPendingFragment();
                                 Navigation.findNavController(view).navigate(actions);
+                                getActivity().recreate();
                                 Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                             }
                         });

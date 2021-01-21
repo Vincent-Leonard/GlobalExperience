@@ -34,7 +34,6 @@ public class SplashFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         SharedPreferenceHelper helper = SharedPreferenceHelper.getInstance((requireActivity()));
-
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             NavDirections action;
             if (helper.getAccessToken().isEmpty()) {
@@ -46,5 +45,4 @@ public class SplashFragment extends Fragment {
             Navigation.findNavController(view).navigate(action);
         }, 2000);
     }
-
 }

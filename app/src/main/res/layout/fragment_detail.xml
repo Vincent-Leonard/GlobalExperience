@@ -297,62 +297,48 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/text_host" />
 
-                        <View
-                            android:id="@+id/black_btn_approve"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginBottom="24dp"
-                            android:background="@drawable/button_black"
-                            android:elevation="5dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/text_category" />
 
                         <Button
                             android:id="@+id/btn_approve"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
                             android:background="@drawable/button_enabled"
                             android:elevation="5dp"
-                            android:text="Approve"
+                            android:text="Open"
                             android:textAllCaps="false"
                             android:textColor="#B4000000"
                             android:textColorHint="#000000"
                             android:textSize="18sp"
                             android:theme="@style/AppTheme"
                             android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/black_btn_approve"
-                            app:layout_constraintEnd_toEndOf="@+id/black_btn_approve"
-                            app:layout_constraintStart_toStartOf="@+id/black_btn_approve"
-                            app:layout_constraintTop_toTopOf="@+id/black_btn_approve" />
-
-                        <View
-                            android:id="@+id/black_btn_reject"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginBottom="24dp"
-                            android:background="@drawable/button_black"
-                            android:elevation="5dp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/black_btn_revision"
-                            app:layout_constraintStart_toEndOf="@+id/black_btn_approve"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/text_category" />
 
                         <Button
+                            android:id="@+id/btn_open"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/button_enabled"
+                            android:elevation="10dp"
+                            android:text="Open"
+                            android:textAllCaps="false"
+                            android:textColor="#B4000000"
+                            android:textColorHint="#000000"
+                            android:textSize="18sp"
+                            android:theme="@style/AppTheme"
+                            android:translationZ="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_category" />
+
+
+                        <Button
                             android:id="@+id/btn_reject"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/button_enabled"
                             android:elevation="5dp"
                             android:text="Reject"
@@ -362,31 +348,18 @@
                             android:textSize="18sp"
                             android:theme="@style/AppTheme"
                             android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/black_btn_reject"
-                            app:layout_constraintEnd_toEndOf="@+id/black_btn_reject"
-                            app:layout_constraintStart_toStartOf="@+id/black_btn_reject"
-                            app:layout_constraintTop_toTopOf="@+id/black_btn_reject" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/btn_revision"
+                            app:layout_constraintStart_toEndOf="@+id/btn_approve"
+                            app:layout_constraintTop_toBottomOf="@+id/text_category" />
 
-                        <View
-                            android:id="@+id/black_btn_revision"
+                        <Button
+                            android:id="@+id/btn_revision"
                             android:layout_width="100dp"
                             android:layout_height="50dp"
                             android:layout_marginTop="24dp"
                             android:layout_marginEnd="20dp"
                             android:layout_marginBottom="24dp"
-                            android:background="@drawable/button_black"
-                            android:elevation="5dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/text_category" />
-
-                        <Button
-                            android:id="@+id/btn_revision"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginBottom="1dp"
                             android:background="@drawable/button_enabled"
                             android:elevation="5dp"
                             android:text="Revision"
@@ -396,10 +369,29 @@
                             android:textSize="18sp"
                             android:theme="@style/AppTheme"
                             android:translationZ="5dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/black_btn_revision"
-                            app:layout_constraintEnd_toEndOf="@+id/black_btn_revision"
-                            app:layout_constraintStart_toStartOf="@+id/black_btn_revision"
-                            app:layout_constraintTop_toTopOf="@+id/black_btn_revision" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/event_category" />
+
+                        <Button
+                            android:id="@+id/btn_close"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="24dp"
+                            android:background="@drawable/button_enabled"
+                            android:elevation="5dp"
+                            android:text="Close"
+                            android:textAllCaps="false"
+                            android:textColor="#B4000000"
+                            android:textColorHint="#000000"
+                            android:textSize="18sp"
+                            android:theme="@style/AppTheme"
+                            android:translationZ="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/event_category" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>

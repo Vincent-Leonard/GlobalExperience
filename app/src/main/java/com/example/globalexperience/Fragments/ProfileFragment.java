@@ -130,10 +130,17 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        getActivity().getViewModelStore().clear();
+    }
+
+
     private Observer<User> observer = new Observer<User>() {
         @Override
         public void onChanged(User user) {
-
+            Log.d("Profile:", helper.getAccessToken());
             if (user.getStudentResults() != null){
                 File imgFile = new  File("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo());
 

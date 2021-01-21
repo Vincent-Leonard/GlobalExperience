@@ -43,4 +43,11 @@ public class ProfileViewModel extends ViewModel {
     public void init(String token){
         repository = ProfileRepository.getInstance(token);
     }
+
+    @Override
+    public void onCleared() {
+        super.onCleared();
+        Log.d(TAG, "onCleared: ");
+        repository.resetInstance();
+    }
 }
