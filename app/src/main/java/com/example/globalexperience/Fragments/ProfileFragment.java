@@ -31,6 +31,7 @@ import com.example.globalexperience.R;
 import com.example.globalexperience.model.local.Student;
 import com.example.globalexperience.model.local.User;
 import com.example.globalexperience.model.response.ProfileResponse;
+import com.example.globalexperience.utils.Constants;
 import com.example.globalexperience.utils.SharedPreferenceHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -142,15 +143,15 @@ public class ProfileFragment extends Fragment {
         public void onChanged(User user) {
             Log.d("Profile:", helper.getAccessToken());
             if (user.getStudentResults() != null){
-                File imgFile = new  File("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo());
+//                File imgFile = new  File("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo());
+//
+//                if(imgFile.exists()){
+//                    Toast.makeText(getActivity(), "ADA", Toast.LENGTH_SHORT).show();
+//                    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+//                    photo.setImageBitmap(myBitmap);
+//                }
 
-                if(imgFile.exists()){
-                    Toast.makeText(getActivity(), "ADA", Toast.LENGTH_SHORT).show();
-                    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-                    photo.setImageBitmap(myBitmap);
-                }
-
-                Glide.with(getActivity()).load("/images/profile_picture/student/" + user.getStudentResults().getStudent_photo()).centerCrop().into(photo);
+                Glide.with(getActivity()).load(user.getStudentResults().getStudent_photo()).centerCrop().into(photo);
                 nim.setText(user.getStudentResults().getNim());
                 email.setText(user.getEmail());
                 name.setText(user.getStudentResults().getStudent_name());

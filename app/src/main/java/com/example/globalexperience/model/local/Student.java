@@ -1,5 +1,6 @@
 package com.example.globalexperience.model.local;
 
+import com.example.globalexperience.utils.Constants;
 import com.google.gson.annotations.SerializedName;
 
 public class Student {
@@ -81,7 +82,7 @@ public class Student {
     }
 
     public String getStudent_photo() {
-        return student_photo;
+        return Constants.BASE_URL_IMAGE_URL_PROFILE + student_photo;
     }
 
     public void setStudent_photo(String student_photo) {
