@@ -62,11 +62,20 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         }else if (history.getStatus().equals("3")){
             holder.status.setText("REVISION");
             holder.banner.setBackgroundColor(Color.BLUE);
-        }else if (history.getStatus().equals("4")){
-            holder.status.setText("OPEN");
-        }else {
-            holder.status.setText("CLOSE");
         }
+        if (history.getIs_group().equals("1")){
+            if (history.getPivot().getApproved().equals("0")){
+                holder.status.setText("Pending");
+                holder.banner.setBackgroundColor(Color.MAGENTA);
+            }else if (history.getPivot().getApproved().equals("1")){
+                holder.status.setText("Approved");
+                holder.banner.setBackgroundColor(Color.GREEN);
+            }else if (history.getPivot().getApproved().equals("2")) {
+                holder.status.setText("Rejected");
+                holder.banner.setBackgroundColor(Color.RED);
+            }
+        }
+
         holder.cardview.setOnClickListener(v -> {
             HistoryFragmentDirections.ActionHistoryFragmentToDetailFragment actionHistoryFragmentToDetailFragment = HistoryFragmentDirections.actionHistoryFragmentToDetailFragment(null, history, null);
             Navigation.findNavController(v).navigate(actionHistoryFragmentToDetailFragment);

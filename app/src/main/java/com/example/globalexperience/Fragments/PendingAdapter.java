@@ -61,10 +61,19 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.ViewHold
         }else if (event.getStatus().equals("3")){
             holder.status.setText("REVISION");
             holder.banner.setBackgroundColor(Color.BLUE);
-        }else if (event.getStatus().equals("4")){
-            holder.status.setText("OPEN");
-        }else {
-            holder.status.setText("CLOSE");
+        }
+
+        if (event.getIs_group().equals("1")){
+            if (event.getPivot().getApproved().equals("0")){
+                holder.status.setText("Pending");
+                holder.banner.setBackgroundColor(Color.MAGENTA);
+            }else if (event.getPivot().getApproved().equals("1")){
+                holder.status.setText("Approved");
+                holder.banner.setBackgroundColor(Color.GREEN);
+            }else if (event.getPivot().getApproved().equals("2")) {
+                holder.status.setText("Rejected");
+                holder.banner.setBackgroundColor(Color.RED);
+            }
         }
         holder.cardview.setOnClickListener(v -> {
             NavDirections action = PendingFragmentDirections.actionPendingFragmentToDetailFragment(event, null, null);

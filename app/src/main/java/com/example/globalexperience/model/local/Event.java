@@ -160,6 +160,14 @@ public class Event implements Parcelable {
         this.status = status;
     }
 
+    public Pivot getPivot() {
+        return pivot;
+    }
+
+    public void setPivot(Pivot pivot) {
+        this.pivot = pivot;
+    }
+
     @Override
     public int describeContents() {
         return 0;
