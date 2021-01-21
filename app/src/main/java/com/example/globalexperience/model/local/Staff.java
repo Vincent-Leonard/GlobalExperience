@@ -1,5 +1,6 @@
 package com.example.globalexperience.model.local;
 
+import com.example.globalexperience.utils.Constants;
 import com.google.gson.annotations.SerializedName;
 
 public class Staff {
@@ -70,7 +71,7 @@ public class Staff {
     }
 
     public String getStaff_photo() {
-        return staff_photo;
+        return Constants.BASE_URL_IMAGE_URL_STAFF + staff_photo;
     }
 
     public void setStaff_photo(String staff_photo) {

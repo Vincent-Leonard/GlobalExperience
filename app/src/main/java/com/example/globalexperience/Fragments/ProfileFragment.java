@@ -165,6 +165,7 @@ public class ProfileFragment extends Fragment {
                 phone.setText(user.getStudentResults().getStudent_phone());
                 line.setText(user.getStudentResults().getStudent_line_account());
             } else if (user.getLecturerResults() != null){
+                Glide.with(getActivity()).load(user.getLecturerResults().getLecturer_photo()).centerCrop().into(photo);
                 nim.setText(user.getLecturerResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getLecturerResults().getLecturer_name());
@@ -177,6 +178,7 @@ public class ProfileFragment extends Fragment {
                 phone.setText(user.getLecturerResults().getLecturer_phone());
                 line.setText(user.getLecturerResults().getLecturer_line_account());
             } else if (user.getStaffResults() != null){
+                Glide.with(getActivity()).load(user.getStaffResults().getStaff_photo()).centerCrop().into(photo);
                 nim.setText(user.getStaffResults().getNip());
                 email.setText(user.getEmail());
                 name.setText(user.getStaffResults().getStaff_name());

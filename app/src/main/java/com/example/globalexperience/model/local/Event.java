@@ -3,6 +3,7 @@ package com.example.globalexperience.model.local;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.globalexperience.utils.Constants;
 import com.google.gson.annotations.SerializedName;
 
 public class Event implements Parcelable {
@@ -145,7 +146,7 @@ public class Event implements Parcelable {
     }
 
     public String getFile() {
-        return file;
+        return Constants.BASE_URL_IMAGE_URL_EVENT + file;
     }
 
     public void setFile(String file) {
