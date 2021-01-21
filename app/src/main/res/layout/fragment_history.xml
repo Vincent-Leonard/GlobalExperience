@@ -50,7 +50,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/h_title"
-            tools:listitem="@layout/item" />
+            tools:listitem="@layout/cardview_adapter" />
 
         <ProgressBar
             android:id="@+id/progressBar2"
